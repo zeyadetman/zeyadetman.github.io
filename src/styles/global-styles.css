@@ -1,0 +1,21 @@
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, monospace;
+}
+
+a {
+  transition: all 0.3s ease;
+}
+
+ul{
+  list-style: none;
+  margin: 0;
+}
+
+li a{
+  text-decoration: none;
+  color: #808080;
+}
+
+li a:hover{
+  color: #0d0d0d;
+}

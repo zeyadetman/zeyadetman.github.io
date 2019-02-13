@@ -1,0 +1,16 @@
+.main-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.main-header ul{
+  display: flex;
+  padding: 10px 25px;
+}
+
+.main-header li{
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 0;
+}
