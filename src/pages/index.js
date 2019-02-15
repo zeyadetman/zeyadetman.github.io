@@ -13,7 +13,7 @@ import {
   faLinkedinIn
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { dayStyles, nightStyles } from "../styles/modeStyles";
+import Tag from "../components/Tag";
 
 const IndexPage = () => {
   return (
@@ -86,6 +86,13 @@ const IndexPage = () => {
             </a>
           </li>
         </ul>
+
+        <Tag
+          title="bankeeper"
+          url="https://github.com/zeyadetman/bankeeper"
+          color="#fc3"
+          type="featured"
+        />
       </div>
     </Layout>
   );
