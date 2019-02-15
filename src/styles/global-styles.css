@@ -1,21 +1,55 @@
+body{
+  transition: all 0.5s ease;
+}
+
 * {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, monospace;
 }
 
-a {
-  transition: all 0.3s ease;
+p{
+  line-height: 20px;
 }
 
 ul{
   list-style: none;
   margin: 0;
+  padding: 0;
 }
 
-li a{
+li{
+  padding-left: .7em;
+  padding-right: .7em;
+  margin-bottom: 0;
+}
+
+a{
+  transition: all 0.3s ease;
   text-decoration: none;
   color: #808080;
 }
 
-li a:hover{
+.text-vertical-margin {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.day-mode a:hover{
   color: #0d0d0d;
+}
+.night-mode a:hover{
+  color: #fc3;
+}
+
+.mode-toggle {
+  position: fixed !important;
+  width: 70px;
+  bottom: 20px;
+  right: 20px;
+}
+
+.mode-toggle :focus,
+.mode-toggle :hover,
+.mode-toggle,
+button :focus {
+  outline: none;
 }

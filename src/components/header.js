@@ -1,30 +1,63 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
-import '../styles/header.css'
+import { Link } from "gatsby";
+import PropTypes from "prop-types";
+import React, { useEffect } from "react";
+import "../styles/header.css";
+import Logo from "../images/favicon.ico";
+import { dayStyles, nightStyles } from "../styles/modeStyles";
 
-const Header = ({ siteTitle }) => (
-  <header className="main-header">
-    <ul>
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="/projects">Projects</Link>
-      </li>
-      <li>
-        <Link to="/blog">Blog</Link>
-      </li>
-    </ul>
-  </header>
-)
+const Header = ({ siteTitle, mode }) => {
+  const currentModeStyle = mode === "day" ? dayStyles : nightStyles;
+
+  return (
+    <header
+      {...currentModeStyle}
+      className={`${currentModeStyle.className} main-header`}
+    >
+      <div className="main-logo">
+        <img
+          src={Logo}
+          style={{
+            marginBottom: 10,
+            marginRight: "1em",
+            width: 50,
+            height: 50
+          }}
+          alt="logo"
+        />
+        <h1
+          style={{
+            marginRight: 15,
+            fontSize: "1.7em"
+          }}
+        >
+          <span style={{ color: "#fc3" }}>Z</span>eyad{" "}
+          <span style={{ color: "#fc3" }}>E</span>tman
+        </h1>
+      </div>
+      <ul>
+        <li>
+          <Link to="/">/home/</Link>
+        </li>
+        <li>
+          <Link to="/projects">/projects/</Link>
+        </li>
+        <li>
+          <Link to="/blog">/blog/</Link>
+        </li>
+        <li>
+          <Link to="/about">/about/</Link>
+        </li>
+      </ul>
+    </header>
+  );
+};
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+  siteTitle: PropTypes.string
+};
 
 Header.defaultProps = {
-  siteTitle: ``,
-}
+  siteTitle: ``
+};
 
-export default Header
+export default Header;
