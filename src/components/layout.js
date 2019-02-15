@@ -1,14 +1,12 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
-
-import Header from "./header";
-import { dayStyles, nightStyles } from "../styles/modeStyles";
-import { capitalize } from "lodash";
 import Switch from "react-switch";
+import { dayStyles, nightStyles } from "../styles/modeStyles";
+import Header from "./header";
+import { connect } from "react-redux";
 
-const Layout = ({ children }) => {
-  const [mode, setMode] = useState("day");
+const Layout = ({ children, mode, toggleMode }) => {
   const currentModeStyle = mode === "day" ? dayStyles : nightStyles;
 
   useEffect(() => {
@@ -36,9 +34,7 @@ const Layout = ({ children }) => {
           <Switch
             className="react-switch mode-toggle"
             checked={mode === "day"}
-            onChange={() =>
-              mode === "day" ? setMode("night") : setMode("day")
-            }
+            onChange={toggleMode}
             onColor="#86d3ff"
             onHandleColor="#2693e6"
             handleDiameter={30}
@@ -70,4 +66,15 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired
 };
 
-export default Layout;
+const mapStateToProps = ({ mode }) => {
+  return { mode };
+};
+
+const mapDispatchToProps = dispatch => {
+  return { toggleMode: () => dispatch({ type: `TOGGLE_MODE` }) };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Layout);
