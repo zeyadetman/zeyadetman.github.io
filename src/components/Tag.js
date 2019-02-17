@@ -17,13 +17,16 @@ export default function Tag({ title, url, type, color }) {
           textTransform: "capitalize",
           display: "inline-block",
           verticalAlign: "text-bottom",
-          marginRight: 5,
           color: "#0d0d0d"
         }}
       >
         {type}
       </span>
-      <a href={url}>{title}</a>
+      {title && url && (
+        <a href={url} style={{ marginLeft: 5 }}>
+          {title}
+        </a>
+      )}
     </div>
   );
 }

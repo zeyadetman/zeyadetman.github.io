@@ -29,7 +29,7 @@ const Layout = ({ children, mode, toggleMode }) => {
         }
       `}
       render={data => (
-        <div>
+        <div style={{ margin: "0 auto" }}>
           <Header siteTitle={data.site.siteMetadata.title} mode={mode} />
           <Switch
             className="react-switch mode-toggle"
