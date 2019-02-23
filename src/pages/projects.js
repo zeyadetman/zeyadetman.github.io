@@ -36,7 +36,7 @@ const Projects = ({ mode }) => {
       </h1>
       <h3 className="projects-title" id="frontendprojects">
         Front-End Development{" "}
-        <a href="/projects/#frontendprojects">
+        <a href="#frontendprojects">
           <FontAwesomeIcon icon={faLink} />
         </a>
       </h3>
@@ -52,7 +52,7 @@ const Projects = ({ mode }) => {
         id="softwareprojects"
       >
         Software Development{" "}
-        <a href="/projects/#softwareprojects">
+        <a href="#softwareprojects">
           <FontAwesomeIcon icon={faLink} />
         </a>
       </h3>
