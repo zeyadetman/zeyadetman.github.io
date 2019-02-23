@@ -14,5 +14,6 @@
 
 .main-header ul{
   display: flex;
+  flex-wrap: wrap;
   padding: .7em 1em;
 }

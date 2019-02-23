@@ -30,8 +30,8 @@ const Header = ({ siteTitle, mode }) => {
             fontSize: "1.7em"
           }}
         >
-          <span style={{ color: "#fc3" }}>Z</span>eyad{" "}
-          <span style={{ color: "#fc3" }}>E</span>tman
+          <span style={{ color: "#fdbd12" }}>Z</span>eyad{" "}
+          <span style={{ color: "#fdbd12" }}>E</span>tman
         </h1>
       </div>
       <ul>

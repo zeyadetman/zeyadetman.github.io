@@ -1,12 +1,13 @@
 import React from "react";
 
-export default function Tag({ title, url, type, color }) {
+export default function Tag({ style, title, url, type, color }) {
   return (
     <div
       style={{
         display: "flex",
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        ...style
       }}
     >
       <span

@@ -5,6 +5,7 @@ import Switch from "react-switch";
 import { dayStyles, nightStyles } from "../styles/modeStyles";
 import Header from "./header";
 import { connect } from "react-redux";
+import "../styles/global-styles.css";
 
 const Layout = ({ children, mode, toggleMode }) => {
   const currentModeStyle = mode === "day" ? dayStyles : nightStyles;
@@ -54,7 +55,15 @@ const Layout = ({ children, mode, toggleMode }) => {
               paddingTop: 0
             }}
           >
-            <main {...currentModeStyle}>{children}</main>
+            <main
+              {...currentModeStyle}
+              style={{
+                ...currentModeStyle.style,
+                ...{ margin: "0 auto" }
+              }}
+            >
+              {children}
+            </main>
           </div>
         </div>
       )}
