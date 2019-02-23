@@ -54,7 +54,15 @@ const Layout = ({ children, mode, toggleMode }) => {
               paddingTop: 0
             }}
           >
-            <main {...currentModeStyle}>{children}</main>
+            <main
+              {...currentModeStyle}
+              style={{
+                ...currentModeStyle.style,
+                ...{ margin: "0 auto" }
+              }}
+            >
+              {children}
+            </main>
           </div>
         </div>
       )}

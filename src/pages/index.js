@@ -13,11 +13,11 @@ import {
   faLinkedinIn
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import Tag from "../components/Tag";
 
-const IndexPage = () => {
+const Home = () => {
   return (
     <Layout>
+      <SEO title="Home" keywords={[`zeyadetman`, `portfolio`]} />
       <div
         style={{
           textAlign: "center",
@@ -27,7 +27,6 @@ const IndexPage = () => {
           minWidth: 320
         }}
       >
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
         <img
           src={Avatar}
           style={{
@@ -41,61 +40,42 @@ const IndexPage = () => {
         <h3 className="text-vertical-margin">
           Software Engineer, Front-End Developer
         </h3>
-        <p>
-          I'm a front-end developer Currently{" "}
-          <a href="https://www.lynks.com/" target="_blank">
-            @Lynks
-          </a>
-          , writing code everyday, Making Useful things using different
-          technologies.
-          <br />
-          Prev:{" "}
-          <a href="https://www.arqamfc.com/" target="_blank">
-            @ArqamFC
-          </a>
-        </p>
-        <ul
-          style={{
-            display: "flex",
-            justifyContent: "center"
-          }}
-        >
-          <li>
-            <a href="https://github.com/zeyadetman">
-              <FontAwesomeIcon icon={faGithub} />
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/zeyadetman">
-              <FontAwesomeIcon icon={faTwitter} />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com/zeyadetman">
-              <FontAwesomeIcon icon={faFacebookF} />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/zeyadetman">
-              <FontAwesomeIcon icon={faLinkedinIn} />
-            </a>
-          </li>
-          <li>
-            <a href="mailto:zeyadetman@gmail.com">
-              <FontAwesomeIcon icon={faEnvelope} />
-            </a>
-          </li>
-        </ul>
-
-        <Tag
-          title="bankeeper"
-          url="https://github.com/zeyadetman/bankeeper"
-          color="#fc3"
-          type="featured"
-        />
+        <p>I Make Things On The Internet</p>
       </div>
+      <ul
+        style={{
+          display: "flex",
+          justifyContent: "center"
+        }}
+      >
+        <li>
+          <a href="https://github.com/zeyadetman">
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/zeyadetman">
+            <FontAwesomeIcon icon={faTwitter} />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/zeyadetman">
+            <FontAwesomeIcon icon={faFacebookF} />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/zeyadetman">
+            <FontAwesomeIcon icon={faLinkedinIn} />
+          </a>
+        </li>
+        <li>
+          <a href="mailto:zeyadetman@gmail.com">
+            <FontAwesomeIcon icon={faEnvelope} />
+          </a>
+        </li>
+      </ul>
     </Layout>
   );
 };
 
-export default IndexPage;
+export default Home;
