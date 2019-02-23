@@ -15,7 +15,7 @@ const Work = props => {
       title: "Front-End Development",
       url: "https://www.arqamfc.com/",
       logo:
-        "https://static.wixstatic.com/media/c2a7f4_53d4f589e97d469aaf36b6a240ad7a35~mv2.png/v1/fill/w_306,h_208,al_c,q_80,usm_0.66_1.00_0.01/c2a7f4_53d4f589e97d469aaf36b6a240ad7a35~mv2.webp",
+        "https://static.wixstatic.com/media/c2a7f4_53d4f589e97d469aaf36b6a240ad7a35~mv2.png/v1/fill/w_402,h_274,al_c,usm_0.66_1.00_0.01/c2a7f4_53d4f589e97d469aaf36b6a240ad7a35~mv2.png",
       date: "Jun 2018 – Nov 2018"
     }
   ];
