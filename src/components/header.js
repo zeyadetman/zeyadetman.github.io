@@ -36,19 +36,19 @@ const Header = ({ siteTitle, mode }) => {
       </div>
       <ul>
         <li>
-          <Link to="/">/home/</Link>
+          <Link to="/">home</Link>
         </li>
         <li>
-          <Link to="/projects">/projects/</Link>
+          <Link to="/projects">projects</Link>
         </li>
         <li>
-          <Link to="/work">/work/</Link>
+          <Link to="/work">work</Link>
         </li>
         <li>
-          <Link to="/blog">/blog/</Link>
+          <Link to="/blog">blog</Link>
         </li>
         <li>
-          <Link to="/about">/about/</Link>
+          <Link to="/about">about</Link>
         </li>
       </ul>
     </header>
