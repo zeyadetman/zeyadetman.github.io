@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { softwareimgs, frontendProjects, softwareProjects } from "../projects";
+import { frontendProjects, softwareProjects } from "../projects";
 import "../styles/projects.css";
 import Card from "../components/card";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
@@ -28,7 +28,7 @@ const Projects = ({ mode }) => {
         <span style={{ marginRight: 10 }}>Codes &amp; Projects</span>
         <iframe
           src="https://ghbtns.com/github-btn.html?user=zeyadetman&type=follow&count=true&size=large"
-          frameborder="0"
+          frameBorder="0"
           scrolling="0"
           width="290px"
           height="30px"

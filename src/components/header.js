@@ -2,7 +2,7 @@ import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React, { useEffect } from "react";
 import "../styles/header.css";
-import Logo from "../images/favicon.ico";
+import Logo from "../../static/images/favicon.ico";
 import { dayStyles, nightStyles } from "../styles/modeStyles";
 
 const Header = ({ siteTitle, mode }) => {

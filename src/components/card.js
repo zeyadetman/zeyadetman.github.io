@@ -1,11 +1,13 @@
 import React from "react";
+import { withPrefix } from "gatsby";
+import { webimgs } from "../projects";
 
 const Card = ({ project }) => {
   return (
     <div className="card">
-      {/* <div className="imgcont">
-              <img src={webimgs[indx]} className="card-img" />
-            </div> */}
+      <div className="imgcont">
+        <img src={withPrefix(project.imgurl)} className="card-img" />
+      </div>
       <div className="card-info">
         <h6 className="card-title">{project.title}</h6>
         <p className="card-desc">{project.description}</p>
