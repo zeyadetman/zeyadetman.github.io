@@ -45,7 +45,11 @@ export default function Template({
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
-        <footer>
+        <footer
+          style={{
+            textAlign: "center"
+          }}
+        >
           <TwitterShareButton
             url={slug}
             options={{

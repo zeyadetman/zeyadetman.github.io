@@ -48,7 +48,7 @@ const Header = ({ siteTitle, mode }) => {
           <Link to="/blog">blog</Link>
         </li>
         <li>
-          <Link to="/about">about</Link>
+          <Link to="/contact">contact</Link>
         </li>
       </ul>
     </header>
