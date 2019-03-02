@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "../components/layout";
 import Tag from "../components/Tag";
 import SEO from "../components/seo";
+import { connect } from "react-redux";
 
-const Work = props => {
+const Work = ({ mode }) => {
+  useEffect(() => {
+    delete require.cache[require.resolve("../linkedin")];
+    require("../linkedin");
+    console.log(mode);
+  }, [mode]);
   const workList = [
     {
       title: "Front-End Development",
@@ -25,16 +31,44 @@ const Work = props => {
         title="Work"
         keywords={["work", "hire", "frontend", "developer", "arqamfc", "lynks"]}
       />
+      <h1
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          marginBottom: 35
+        }}
+      >
+        Hire Me
+        <div
+          className="LI-profile-badge"
+          data-version="v1"
+          data-size="medium"
+          data-locale="en_US"
+          data-type="horizontal"
+          data-theme={mode === "day" ? "light" : "dark"}
+          data-vanity="zeyadetman"
+        >
+          <a
+            className="LI-simple-link"
+            href="https://eg.linkedin.com/in/zeyadetman"
+          >
+            Zeyad Etman
+          </a>
+        </div>
+      </h1>
       <div
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
-          gridGap: 10
+          gridGap: 15
         }}
       >
         {workList.map(({ date, title, url, logo, current }, indx) => (
           <div
             className="content"
+            key={indx}
             style={{
               display: "flex",
               flexDirection: "column",
@@ -72,4 +106,8 @@ const Work = props => {
   );
 };
 
-export default Work;
+const mapStateToProps = ({ mode }) => {
+  return { mode };
+};
+
+export default connect(mapStateToProps)(Work);

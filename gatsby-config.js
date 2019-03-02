@@ -3,10 +3,12 @@ module.exports = {
   siteMetadata: {
     title: `Zeyad Etman`,
     description: `Zeyad Etman's Space on the internet.`,
-    author: `@zeyadetman`
+    author: `@zeyadetman`,
+    owner: "zeyadetman"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -27,7 +29,16 @@ module.exports = {
         display: `minimal-ui`,
         icon: `static/images/logo.png` // This path is relative to the root of the site.
       }
+    },
+    "gatsby-plugin-offline",
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: "pages"
+      }
     }
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

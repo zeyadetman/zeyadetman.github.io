@@ -1,32 +1,34 @@
-body{
+body {
   transition: all 0.5s ease;
 }
 
-h1, p{
+h1,
+p {
   transition: all 0.1s ease;
 }
 
 * {
-  font-family: 'HelveticaNeueW01-45Ligh','Helvetica LT Std Light','Helvetica Neue LT Std',Helvetica;
+  font-family: "HelveticaNeueW01-55Roma", "Helvetica LT Std Light",
+    "Helvetica Neue LT Std", Helvetica;
 }
 
-p{
+p {
   line-height: 20px;
 }
 
-ul{
+ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-li{
-  padding-left: .7em;
-  padding-right: .7em;
+li {
+  padding-left: 0.7em;
+  padding-right: 0.7em;
   margin-bottom: 0;
 }
 
-a{
+a {
   transition: all 0.3s ease;
   text-decoration: none;
   color: #808080;
@@ -37,10 +39,37 @@ a{
   margin-bottom: 0;
 }
 
-.day-mode a:hover{
+.day-mode a:hover {
   color: #0d0d0d;
 }
-.night-mode a:hover{
+
+.day-mode .article a {
+  color: #000;
+}
+
+.day-mode .article small,
+.day-mode .article p {
+  color: #474747;
+}
+
+.night-mode .article a {
+  color: #fdbd12;
+}
+
+.night-mode .article a:hover {
+  color: #ffdd80;
+}
+
+.night-mode .article small,
+.night-mode .article p {
+  color: #ececec;
+}
+
+.day-mode .article a:hover {
+  color: #fdbd12;
+}
+
+.night-mode a:hover {
   color: #fdbd12;
 }
 

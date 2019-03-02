@@ -7,7 +7,7 @@ import Card from "../components/card";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Projects = ({ mode }) => {
+const Projects = () => {
   // const importAll = r => r.keys().map(r);
 
   // const webimgs = importAll(
@@ -20,17 +20,19 @@ const Projects = ({ mode }) => {
       <h1
         style={{
           display: "flex",
+          flexDirection: "column",
           alignItems: "center",
+          textAlign: "center",
           marginBottom: 25,
           flexWrap: "wrap"
         }}
       >
-        <span style={{ marginRight: 10 }}>Codes &amp; Projects</span>
+        <span style={{ marginBottom: 10 }}>Codes &amp; Projects</span>
         <iframe
-          src="https://ghbtns.com/github-btn.html?user=zeyadetman&type=follow&count=true&size=large"
+          src="https://ghbtns.com/github-btn.html?user=zeyadetman&type=follow&count=true"
           frameBorder="0"
           scrolling="0"
-          width="290px"
+          width="170px"
           height="30px"
         />
       </h1>
