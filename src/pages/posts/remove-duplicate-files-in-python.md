@@ -19,10 +19,10 @@ the program takes the file path from user, then calculates its sha-256 hash, the
 <li>run script.</li>
 </ol>
 
-\*NOTE: 'the folder path not included sub-folders'.
+- NOTE: 'the folder path not included sub-folders'.
 
-if you want to contribute, fork it.
+If you want to contribute, fork it.
 
-{% gist 79b8331d1d4bbb535c711c8883977554  %}
+`gist:zeyadetman/79b8331d1d4bbb535c711c8883977554#RemoveDuplicateFiles.py`
 
 <a href="https://github.com/zeyadetman" target="_blank">Follow me on github</a>

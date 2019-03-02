@@ -56,7 +56,7 @@ a {
   color: #fdbd12;
 }
 
-.night-mode .article a:hover {
+.night-mode .article-summary a:hover {
   color: #ffdd80;
 }
 
@@ -65,7 +65,7 @@ a {
   color: #ececec;
 }
 
-.day-mode .article a:hover {
+.day-mode .article-summary a:hover {
   color: #fdbd12;
 }
 

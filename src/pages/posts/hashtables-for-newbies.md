@@ -44,7 +44,7 @@ In a simple sentence, Hashtable is data-structure to help you using an ordinary 
 
 We have a `colors` array like this:
 
-```javascript
+```javascript {numberLines: true}
 const colors = [
   { color: "white", code: "#fff" },
   { color: "orange", code: "#fc3" }
@@ -54,7 +54,7 @@ const colors = [
 and The problem is we have to find the `code` of the color `orange`?!
 without Hashtable the first naive solution is iterating the whole array and if color is orange display the code! slow, right?
 
-```javascript
+```javascript {numberLines: true}
 colors.map(color => {
   if (color["color"] === "orange") console.log(color["code"]);
 });
@@ -63,14 +63,14 @@ colors.map(color => {
 Let's take another approach, converting it into a key-value array.
 convert the last array to this array:
 
-```javascript
+```javascript {numberLines: true}
 const colors = ["#fff", "#fc3"];
 ```
 
 and if we write `colors['orange']` the console displays `#fc3`!
 To do this we have to `hash` the word `white` and `orange` to be equal index in size which is `>=` zero and less than the array size.
 
-```javascript
+```javascript {numberLines: true}
 const colors = [];
 
 const hashFunction = key => {

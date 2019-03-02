@@ -17,7 +17,7 @@ have two main components one big called 'Library' and another small 'Book', we h
 
 In our Library component we have this state
 
-```js
+```javascript {numberLines: true}
 this.state = {
   reads: 0,
   books: [
@@ -52,7 +52,7 @@ and want to create `this.state.books.length` - as a number - `Book` components e
 
 [Full Code here](https://github.com/zeyadetman/howmanybooks/blob/master/src/components/Library/Library.jsx)
 
-```js
+```javascript {numberLines: true}
 {
   this.state.books.map((_book, _id) => {
     return (
@@ -76,7 +76,7 @@ _Note_ ignore `handleCounter` for now.
 
 [Full code here](https://github.com/zeyadetman/howmanybooks/blob/master/src/components/Book/Book.jsx)
 
-```js
+```javascript {numberLines: true}
 ...
 render() {
 	return (
@@ -99,7 +99,7 @@ In our `Book` we have this state
 
 [Full code here](https://github.com/zeyadetman/howmanybooks/blob/master/src/components/Book/Book.jsx)
 
-```jsx
+```jsx {numberLines: true}
 this.state = {
   status: false,
   id: this.props.id
@@ -116,7 +116,7 @@ In our `Book` component, we'll add a checkbox that recieve the change of the boo
 
 [Full code here](https://github.com/zeyadetman/howmanybooks/blob/master/src/components/Book/Book.jsx)
 
-```js
+```js {numberLines: true}
 <input type="checkbox" name="example" onChange={this.handleChange} />
 ```
 
@@ -124,7 +124,7 @@ you need to bind the function first, then update the `Book` state with the new s
 
 [Full code here](https://github.com/zeyadetman/howmanybooks/blob/master/src/components/Book/Book.jsx)
 
-```js
+```js {numberLines: true}
 handleChange() {
 		this.setState({status: !this.state.status}, this.updateLibraryCount);
     }
@@ -138,7 +138,7 @@ In `updateLibraryCount` we used `handleCounter` function of the `Library` as a p
 
 [Full Code here](https://github.com/zeyadetman/howmanybooks/blob/master/src/components/Library/Library.jsx)
 
-```js
+```js {numberLines: true}
 handleCounter(_State) {
         //Get the index of this book by searching by its unique isbn
         const ObjNum = this.state.books.findIndex(

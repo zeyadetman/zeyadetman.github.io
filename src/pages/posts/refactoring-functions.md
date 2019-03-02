@@ -7,8 +7,6 @@ author: zeyadetman
 comments: true
 ---
 
-# Refactoring Functions
-
 ## Pure Functions Vs Impure Functions
 
 Hello, in this post I'll explain the difference between pure and impure functions in JavaScript, and How to convert from impure to pure function.

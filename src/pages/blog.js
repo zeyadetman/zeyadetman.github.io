@@ -24,6 +24,9 @@ export default function blog() {
                     date(formatString: "MMMM DD, YYYY")
                   }
                   timeToRead
+                  fields {
+                    slug
+                  }
                   wordCount {
                     words
                   }
@@ -53,6 +56,7 @@ export default function blog() {
                   timeToRead={node.timeToRead}
                   excerpt={node.excerpt}
                   key={node.id}
+                  slug={node.fields.slug}
                 />
               ))}
             </>

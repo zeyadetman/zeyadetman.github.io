@@ -1,13 +1,15 @@
 import React from "react";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "gatsby";
 
 export default function ArticleSummary({
   excerpt,
   title,
   date,
   id,
-  timeToRead
+  timeToRead,
+  slug
 }) {
   return (
     <article
@@ -16,36 +18,26 @@ export default function ArticleSummary({
         width: "70%",
         marginLeft: "auto",
         marginRight: "auto",
-        minWidth: 300
+        minWidth: 320
       }}
-      className="article"
+      className="article-summary article"
     >
       <header>
         <h3
           style={{
-            fontSize: "1.7em",
+            fontSize: "1.6em",
             margin: "10px 0"
           }}
         >
-          <a
-            href=""
-            onClick={() => {
-              console.log(id);
-            }}
-          >
-            {title}
-          </a>{" "}
-          <small
-            style={{
-              fontSize: 12
-            }}
-          >
-            <FontAwesomeIcon icon={faClock} />{" "}
-            {`${timeToRead} ${timeToRead > 1 ? "mins" : "min"} read`}
-          </small>
+          <Link to={slug}>{title}</Link>{" "}
         </h3>
         <small>
-          <span>{date}</span>{" "}
+          <span>{date}</span>
+          {"   •   "}
+          <span>
+            <FontAwesomeIcon icon={faClock} />{" "}
+            {`${timeToRead} ${timeToRead > 1 ? "mins" : "min"} read`}
+          </span>
         </small>
       </header>
       <p>{excerpt}</p>
