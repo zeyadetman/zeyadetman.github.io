@@ -1,5 +1,5 @@
 ---
-title: "Revamp my blog from Jekyll to GatsbyJS, You have to try"
+title: "Revamp my blog from Jekyll to Gatsby, and You have to try"
 author: "zeyadetman"
 categories: technical
 comments: true
