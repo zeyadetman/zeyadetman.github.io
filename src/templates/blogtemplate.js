@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../styles/blogpost.css";
+import { TwitterShareButton } from "react-twitter-embed";
 
 export default function Template({
   data // this prop will be injected by the GraphQL query below.
@@ -44,6 +45,16 @@ export default function Template({
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
+        <footer>
+          <TwitterShareButton
+            url={slug}
+            options={{
+              text: frontmatter.title,
+              via: "zeyadetman",
+              size: "large"
+            }}
+          />
+        </footer>
       </article>
     </Layout>
   );

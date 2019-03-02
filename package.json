@@ -1,9 +1,9 @@
 {
   "name": "zeyadetman",
-  "homepage": "https://zeyadetman.github.io/zeyadetmanBlog",
+  "homepage": "https://zeyadetman.github.io",
   "private": true,
   "description": "Zeyad Etman's site",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Zeyad Etman <zeyadetman@gmail.com>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.15",
@@ -48,10 +48,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zeyadetman/zeyadetmanBlog"
+    "url": "https://github.com/zeyadetman/zeyadetman.github.io"
   },
   "bugs": {
-    "url": "https://github.com/zeyadetman/zeyadetmanBlog/issues"
+    "url": "https://github.com/zeyadetman/zeyadetman.github.io/issues"
   },
   "devDependencies": {
     "eslint": "^5.13.0",
