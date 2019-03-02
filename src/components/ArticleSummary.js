@@ -29,7 +29,7 @@ export default function ArticleSummary({
             margin: "10px 0"
           }}
         >
-          <Link to={slug}>{title}</Link>{" "}
+          <Link to={`/${slug}`}>{title}</Link>{" "}
         </h3>
         <small>
           <span>{date}</span>

@@ -48,17 +48,20 @@ export default function blog() {
                 Writings & Thoughts
                 <TwitterFollowButton screenName={"zeyadetman"} />
               </h1>
-              {posts.map(({ node }) => (
-                <ArticleSummary
-                  title={node.frontmatter.title}
-                  date={node.frontmatter.date}
-                  id={node.id}
-                  timeToRead={node.timeToRead}
-                  excerpt={node.excerpt}
-                  key={node.id}
-                  slug={node.fields.slug}
-                />
-              ))}
+              {posts.map(
+                ({ node }) =>
+                  !node.fields.slug.includes("/ar/") && (
+                    <ArticleSummary
+                      title={node.frontmatter.title}
+                      date={node.frontmatter.date}
+                      id={node.id}
+                      timeToRead={node.timeToRead}
+                      excerpt={node.excerpt}
+                      key={node.id}
+                      slug={node.fields.slug}
+                    />
+                  )
+              )}
             </>
           );
         }}

@@ -26,6 +26,9 @@ exports.createPages = ({ actions, graphql }) => {
             fields {
               slug
             }
+            frontmatter {
+              toArabic
+            }
           }
         }
       }
@@ -40,7 +43,7 @@ exports.createPages = ({ actions, graphql }) => {
         path: node.fields.slug,
         slug: node.fields.slug,
         component: Template,
-        context: { slug: node.fields.slug } // additional data can be passed via context
+        context: { slug: node.fields.slug, toArabic: node.frontmatter.toArabic } // additional data can be passed via context
       });
     });
   });

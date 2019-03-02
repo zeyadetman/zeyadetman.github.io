@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,7 +11,14 @@ export default function Template({
   data // this prop will be injected by the GraphQL query below.
 }) {
   const { markdownRemark } = data; // data.markdownRemark holds our post data
-  const { frontmatter, html, slug, timeToRead, wordCount } = markdownRemark;
+  const {
+    frontmatter,
+    html,
+    fields: { slug },
+    timeToRead,
+    wordCount
+  } = markdownRemark;
+  const { toArabic } = frontmatter;
   return (
     <Layout>
       <SEO title={frontmatter.title} />
@@ -28,7 +35,8 @@ export default function Template({
           <h3
             style={{
               fontSize: "1.6em",
-              margin: "10px 0"
+              margin: "10px 0",
+              ...(slug.includes("/ar/") && toArabic && { direction: "rtl" })
             }}
           >
             <a href={slug}>{frontmatter.title}</a>
@@ -41,8 +49,29 @@ export default function Template({
               {`${timeToRead} ${timeToRead > 1 ? "mins" : "min"} read`}
             </span>
           </small>
+          {toArabic && (
+            <p
+              style={{
+                border: "1px dashed",
+                padding: 10,
+                marginBottom: 0
+              }}
+            >
+              {!slug.includes("/ar/") && toArabic && (
+                <Link to={`/${slug}ar/`}>Translated to Arabic</Link>
+              )}
+              {slug.includes("/ar/") && toArabic && (
+                <Link to={`/${slug.replace("/ar/", "")}`}>
+                  Translated to English
+                </Link>
+              )}
+            </p>
+          )}
         </header>
         <p
+          style={{
+            ...(slug.includes("/ar/") && toArabic && { direction: "rtl" })
+          }}
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
@@ -52,7 +81,7 @@ export default function Template({
           }}
         >
           <TwitterShareButton
-            url={slug}
+            url={location.href.toString()}
             options={{
               text: frontmatter.title,
               via: "zeyadetman",
@@ -75,6 +104,7 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
+        toArabic
       }
       timeToRead
       wordCount {

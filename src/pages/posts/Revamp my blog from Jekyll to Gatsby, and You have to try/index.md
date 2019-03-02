@@ -3,7 +3,8 @@ title: "Revamp my blog from Jekyll to Gatsby, and You have to try"
 author: "zeyadetman"
 categories: technical
 comments: true
-date: "2019-03-2"
+toArabic: true
+date: "2019-03-02"
 ---
 
 I revamped my blog to be built on Gatsbyjs instead of Jekyll, Everything become cleaner, and faster. In this post I'll explain what are the differences I have touched and why have you to try Gatsbyjs? so let's start.
