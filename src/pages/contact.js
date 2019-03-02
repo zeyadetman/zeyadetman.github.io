@@ -26,7 +26,7 @@ export default function Contact() {
             <p
               style={{
                 textAlign: "center",
-                fontSize: "2em",
+                fontSize: "1.7em",
                 fontWeight: 700,
                 background: "#fdbd12",
                 lineHeight: "84px",
