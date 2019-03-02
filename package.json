@@ -35,7 +35,10 @@
     "styled-components": "^4.1.3"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "zeyadetman",
+    "technical",
+    "arabic"
   ],
   "license": "MIT",
   "scripts": {

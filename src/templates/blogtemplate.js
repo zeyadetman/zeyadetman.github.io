@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
@@ -19,6 +19,7 @@ export default function Template({
     wordCount
   } = markdownRemark;
   const { toArabic } = frontmatter;
+
   return (
     <Layout>
       <SEO title={frontmatter.title} />
@@ -80,8 +81,9 @@ export default function Template({
             textAlign: "center"
           }}
         >
+          {console.log(`/${encodeURI(slug)}`)}
           <TwitterShareButton
-            url={location.href.toString()}
+            url={`https://zeyadetman.io/${encodeURI(slug)}`}
             options={{
               text: frontmatter.title,
               via: "zeyadetman",
