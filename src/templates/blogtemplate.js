@@ -40,7 +40,7 @@ export default function Template({
               ...(slug.includes("/ar/") && toArabic && { direction: "rtl" })
             }}
           >
-            <a href={slug}>{frontmatter.title}</a>
+            {frontmatter.title}
           </h3>
           <small>
             <span>{frontmatter.date}</span>
@@ -81,9 +81,8 @@ export default function Template({
             textAlign: "center"
           }}
         >
-          {console.log(`/${encodeURI(slug)}`)}
           <TwitterShareButton
-            url={`https://zeyadetman.io/${encodeURI(slug)}`}
+            url={`https://zeyadetman.github.io/${encodeURI(slug)}`}
             options={{
               text: frontmatter.title,
               via: "zeyadetman",
