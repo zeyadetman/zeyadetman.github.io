@@ -5,6 +5,7 @@ import { faClock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../styles/blogpost.css";
 import { TwitterShareButton } from "react-twitter-embed";
+import SEO from "../components/seo";
 
 export default function Template({
   data // this prop will be injected by the GraphQL query below.
@@ -14,6 +15,7 @@ export default function Template({
   const { frontmatter, html, slug, timeToRead, wordCount } = markdownRemark;
   return (
     <Layout>
+      <SEO title={frontmatter.title} />
       <article
         className="blog-post-container article"
         style={{ width: "70%", margin: "0 auto", minWidth: 320 }}
