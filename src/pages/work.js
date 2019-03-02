@@ -8,7 +8,6 @@ const Work = ({ mode }) => {
   useEffect(() => {
     delete require.cache[require.resolve("../linkedin")];
     require("../linkedin");
-    console.log(mode);
   }, [mode]);
   const workList = [
     {
