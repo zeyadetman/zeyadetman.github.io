@@ -8,12 +8,6 @@ import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Projects = () => {
-  // const importAll = r => r.keys().map(r);
-
-  // const webimgs = importAll(
-  //   require.context("../images/projects/web/", true, /\.png$/)
-  // );
-
   return (
     <Layout>
       <SEO title="Projects" />

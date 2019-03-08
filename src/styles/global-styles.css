@@ -34,43 +34,29 @@ a {
   color: #808080;
 }
 
-.text-vertical-margin {
-  margin-top: 5px;
-  margin-bottom: 0;
-}
-
-.day-mode a:hover {
-  color: #0d0d0d;
-}
-
-.day-mode .article a {
+.social-network li a:hover {
   color: #000;
 }
 
-.day-mode .article small,
-.day-mode .article p {
-  color: #474747;
+a:hover {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ffbf00),
+    to(#ff6a00)
+  );
+  background: linear-gradient(to right, #ffbf00, #ff6a00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  text-shadow: none;
 }
 
-.night-mode .article a {
-  color: #fdbd12;
-}
-
-.night-mode .article-summary a:hover {
-  color: #ffdd80;
-}
-
-.night-mode .article small,
-.night-mode .article p {
-  color: #ececec;
-}
-
-.day-mode .article-summary a:hover {
-  color: #fdbd12;
-}
-
-.night-mode a:hover {
-  color: #fdbd12;
+.text-vertical-margin {
+  margin-top: 5px;
+  margin-bottom: 0;
 }
 
 .mode-toggle {

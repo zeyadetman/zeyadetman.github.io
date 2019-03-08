@@ -20,10 +20,6 @@ a {
   text-decoration: none;
 }
 
-.day-mode .article a {
-  color: #808080;
-}
-
 .day-mode .article h3 a,
 .day-mode .article h3:hover {
   color: #000;
@@ -34,16 +30,14 @@ a {
   color: #fff;
 }
 
-.day-mode .article p a:hover {
-  color: #fdbd12;
+.night-mode .article a,
+.day-mode .article a {
+  color: #03a9f4;
 }
 
-.night-mode .article p a {
-  color: #808080;
-}
-
-.night-mode .article p a:hover {
-  color: #fdbd12;
+.night-mode .article small,
+.night-mode .article p {
+  color: #ececec;
 }
 
 pre[class*="language-"] {

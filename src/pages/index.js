@@ -46,6 +46,7 @@ const Home = () => {
           display: "flex",
           justifyContent: "center"
         }}
+        className="social-network"
       >
         <li>
           <a href="https://github.com/zeyadetman">

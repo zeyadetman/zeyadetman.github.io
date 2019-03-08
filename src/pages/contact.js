@@ -28,7 +28,7 @@ export default function Contact() {
                 textAlign: "center",
                 fontSize: "1.7em",
                 fontWeight: 700,
-                background: "#fdbd12",
+                background: "linear-gradient(to right, #ffbf00, #ff6a00)",
                 lineHeight: "84px",
                 color: "#000"
               }}
