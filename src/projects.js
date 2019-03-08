@@ -17,12 +17,12 @@ export const frontendProjects = [
     site: "https://zeyadetman.github.io/which-movie-should-watch/"
   },
   {
-    title: "The Chaos Game",
+    title: "Sierpinski Triangle",
     description:
-      "A method of creating a fractal, using a polygon and an initial point selected at random inside it.",
+      "📐 Sierpinski triangle is a fractal and attractive fixed set with the overall shape of an equilateral triangle, subdivided recursively into smaller equilateral triangles.",
     imgurl: `${webimgs}chaos.png`,
-    sourcecodeurl: "https://github.com/zeyadetman/chaos",
-    site: "https://zeyadetman.github.io/chaos/"
+    sourcecodeurl: "https://github.com/zeyadetman/sierpinski-triangle",
+    site: "https://zeyadetman.github.io/sierpinski-triangle/"
   },
   {
     title: "Clock",
