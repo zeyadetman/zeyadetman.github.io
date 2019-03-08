@@ -38,6 +38,7 @@ a {
   color: #000;
 }
 
+.name-logo,
 a:hover {
   background: -webkit-gradient(
     linear,

@@ -58,8 +58,7 @@ const Layout = ({ children, mode, toggleMode }) => {
             <main
               {...currentModeStyle}
               style={{
-                ...currentModeStyle.style,
-                ...{ margin: "0 auto" }
+                ...currentModeStyle.style
               }}
               mode={mode}
             >

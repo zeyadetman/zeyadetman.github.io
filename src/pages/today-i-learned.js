@@ -3,6 +3,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import "../styles/projects.css";
 import { connect } from "react-redux";
+import { TwitterShareButton } from "react-twitter-embed";
 
 const Til = ({ mode }) => {
   const tils = [
@@ -64,21 +65,40 @@ const Til = ({ mode }) => {
           gridGap: 15
         }}
       >
-        {tils.map(tip => (
-          <div className="card" key={tip.title}>
-            <h2 style={{ marginBottom: 5, paddingLeft: 10 }}>{tip.title}</h2>
-            <time style={{ paddingLeft: 10 }} dateTime={tip.date}>
-              {tip.date}
-            </time>
-            <div
-              style={{
-                marginTop: 25
-              }}
-            >
-              {tip.body}
+        {tils.map(tip => {
+          const tipId = tip.title.replace(/ /g, "").toLowerCase();
+          return (
+            <div className="card" key={tip.title}>
+              <h2 style={{ marginBottom: 5, paddingLeft: 10 }} id={tipId}>
+                {tip.title}
+              </h2>
+              <time style={{ paddingLeft: 10 }} dateTime={tip.date}>
+                {tip.date}
+              </time>
+              <div
+                style={{
+                  marginTop: 25
+                }}
+              >
+                {tip.body}
+              </div>
+              <div
+                style={{
+                  textAlign: "center"
+                }}
+              >
+                <TwitterShareButton
+                  url={`https://zeyadetman.github.io/today-i-learned/#${tipId}`}
+                  options={{
+                    text: `TIL: ${tip.title}`,
+                    via: "zeyadetman",
+                    size: "large"
+                  }}
+                />
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </Layout>
   );

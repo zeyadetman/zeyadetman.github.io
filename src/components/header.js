@@ -29,9 +29,9 @@ const Header = ({ siteTitle, mode }) => {
             marginRight: 15,
             fontSize: "1.7em"
           }}
+          className="name-logo"
         >
-          <span style={{ color: "#fdbd12" }}>Z</span>eyad{" "}
-          <span style={{ color: "#fdbd12" }}>E</span>tman
+          Zeyad Etman
         </h1>
       </div>
       <ul>

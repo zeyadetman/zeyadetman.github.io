@@ -4,6 +4,7 @@ import SEO from "../components/seo";
 import { StaticQuery, graphql } from "gatsby";
 import ArticleSummary from "../components/ArticleSummary";
 import { TwitterFollowButton } from "react-twitter-embed";
+import "../styles/blogpost.css";
 
 export default function blog() {
   return (
