@@ -1,17 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import { Link, navigate } from "gatsby";
 import PropTypes from "prop-types";
 import { useMedia } from "use-media";
+import windowSize from "react-window-size";
+import { dayStyles, nightStyles } from "../styles/modeStyles";
 import "../styles/header.css";
 import Logo from "../../static/images/favicon.ico";
-import { dayStyles, nightStyles } from "../styles/modeStyles";
 
 const Header = ({ siteTitle, mode, currentPath }) => {
   const currentModeStyle = mode === "day" ? dayStyles : nightStyles;
-  const hideMenu = useMedia({ maxWidth: "1111px" });
-  const hideMyName = useMedia({ maxWidth: "512px" });
   const [path, setPath] = useState(currentPath || "404");
-  const [isShowMenuActive, setShowMenu] = useState(false);
+  const hideMenu = useMedia({ maxWidth: "1111px" }, true);
+  const hideMyName = useMedia({ maxWidth: "512px" }, true);
+
+  const [state, dispatch] = useReducer(
+    (state, action) => {
+      if (action === "TOGGLE_SHOW_MENU") {
+        return { ...state, isShowMenuActive: !state.isShowMenuActive };
+      }
+
+      // if (action === "HIDE_MENU") {
+      //   return { ...state, hideMenu: useMedia({ maxWidth: "1111px" }) };
+      // }
+
+      // if (action === "HIDE_MY_NAME") {
+      //   return { ...state, hideMyName: useMedia({ maxWidth: "512px" }) };
+      // }
+    },
+    {
+      isShowMenuActive: false,
+      hideMenu,
+      hideMyName
+    }
+  );
 
   return (
     <header
@@ -30,7 +51,7 @@ const Header = ({ siteTitle, mode, currentPath }) => {
           }}
           alt="logo"
         />
-        {!isShowMenuActive && (
+        {!state.isShowMenuActive && (
           <React.Fragment>
             <h1
               style={{
@@ -58,7 +79,7 @@ const Header = ({ siteTitle, mode, currentPath }) => {
         )}
       </div>
 
-      {(!hideMenu || isShowMenuActive) && (
+      {(state.isShowMenuActive || !hideMenu) && (
         <ul>
           <li>
             <Link to="/" activeClassName="active-page-link">
@@ -86,7 +107,7 @@ const Header = ({ siteTitle, mode, currentPath }) => {
           </li>
           <li>
             <Link to="/today-i-learned" activeClassName="active-page-link">
-              {isShowMenuActive ? "til" : "today i learned"}
+              {state.isShowMenuActive ? "til" : "today i learned"}
             </Link>
           </li>
           <li>
@@ -104,7 +125,7 @@ const Header = ({ siteTitle, mode, currentPath }) => {
             fontSize: "1.5em"
           }}
           onClick={() => {
-            setShowMenu(!isShowMenuActive);
+            dispatch("TOGGLE_SHOW_MENU");
           }}
         >
           &#9776;

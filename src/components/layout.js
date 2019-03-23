@@ -39,13 +39,17 @@ const Layout = ({ children, mode, toggleMode, currentPath }) => {
             mode={mode}
             currentPath={currentPath}
           />
-          <Switch
+          {/* <Switch
             className="react-switch mode-toggle"
-            checked={(() => (mode === "day" ? true : false))()}
+            checked={mode === "day" ? true : false}
             onChange={e => {
               const modeFormatter = e ? "day" : "night";
               toggleMode(modeFormatter);
-              localStorage.setItem("mode", modeFormatter);
+              try {
+                localStorage.setItem("mode", modeFormatter);
+              } catch (error) {
+                console.log(error);
+              }
             }}
             onColor="#86d3ff"
             onHandleColor="#2693e6"
@@ -57,7 +61,7 @@ const Layout = ({ children, mode, toggleMode, currentPath }) => {
             height={20}
             width={48}
             id="material-switch"
-          />
+          /> */}
           <div
             style={{
               margin: `0 auto`,

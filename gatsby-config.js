@@ -27,49 +27,7 @@ module.exports = {
         background_color: `#fdbd12`,
         theme_color: `#fdbd12`,
         display: `minimal-ui`,
-        icon: `static/images/logo.png`, // This path is relative to the root of the site.
-        icons: [
-          {
-            src: "static/images/logo.png",
-            sizes: "48x48",
-            type: "image/png"
-          },
-          {
-            src: "static/images/logo.png",
-            sizes: "72x72",
-            type: "image/png"
-          },
-          {
-            src: "static/images/logo.png",
-            sizes: "96x96",
-            type: "image/png"
-          },
-          {
-            src: "static/images/logo.png",
-            sizes: "144x144",
-            type: "image/png"
-          },
-          {
-            src: "static/images/logo.png",
-            sizes: "192x192",
-            type: "image/png"
-          },
-          {
-            src: "static/images/logo.png",
-            sizes: "256x256",
-            type: "image/png"
-          },
-          {
-            src: "static/images/logo.png",
-            sizes: "384x384",
-            type: "image/png"
-          },
-          {
-            src: "static/images/logo.png",
-            sizes: "512x512",
-            type: "image/png"
-          }
-        ]
+        icon: `static/images/logo.png` // This path is relative to the root of the site.
       }
     },
     "gatsby-plugin-offline",
