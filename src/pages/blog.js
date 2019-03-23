@@ -6,9 +6,9 @@ import ArticleSummary from "../components/ArticleSummary";
 import { TwitterFollowButton } from "react-twitter-embed";
 import "../styles/blogpost.css";
 
-export default function blog() {
+export default function blog({ location: { pathname } }) {
   return (
-    <Layout>
+    <Layout currentPath={pathname}>
       <SEO title="Blog" keywords={[`zeyadetman`, `blog`, "technical"]} />
       <StaticQuery
         query={graphql`

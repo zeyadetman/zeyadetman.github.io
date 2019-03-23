@@ -21,7 +21,7 @@ export default function Template({
   const { toArabic } = frontmatter;
 
   return (
-    <Layout>
+    <Layout currentPath={`/${slug}`}>
       <SEO title={frontmatter.title} />
       <article
         className="blog-post-container article"

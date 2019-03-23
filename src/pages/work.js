@@ -4,7 +4,7 @@ import Tag from "../components/Tag";
 import SEO from "../components/seo";
 import { connect } from "react-redux";
 
-const Work = ({ mode }) => {
+const Work = ({ mode, location: { pathname } }) => {
   useEffect(() => {
     delete require.cache[require.resolve("../linkedin")];
     require("../linkedin");
@@ -25,7 +25,7 @@ const Work = ({ mode }) => {
     }
   ];
   return (
-    <Layout>
+    <Layout currentPath={pathname}>
       <SEO
         title="Work"
         keywords={["work", "hire", "frontend", "developer", "arqamfc", "lynks"]}

@@ -13,9 +13,9 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
-const Home = () => {
+const Home = ({ location: { pathname } }) => {
   return (
-    <Layout>
+    <Layout currentPath="/home/">
       <SEO title="Home" keywords={[`zeyadetman`, `portfolio`]} />
       <div
         style={{

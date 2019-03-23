@@ -1,10 +1,8 @@
 .main-header {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  padding: 0 25px;
-  flex-wrap: wrap;
   margin-bottom: 35px;
+  justify-content: space-around;
 }
 
 .main-logo {
@@ -14,9 +12,23 @@
 
 .main-header ul {
   display: flex;
-  flex-wrap: wrap;
   padding: 0.7em 1em;
   text-transform: uppercase;
   font-weight: 600;
   font-size: 1em;
+  flex-wrap: wrap;
+}
+
+.input-path {
+  font-weight: 600;
+  font-size: 1.2em;
+  background: transparent;
+  border: solid 5px transparent;
+  caret-color: #0095ff;
+  color: #0095ff;
+  /* !importanté */
+}
+
+.input-path:focus {
+  outline: none;
 }

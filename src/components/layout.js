@@ -10,7 +10,7 @@ import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import "prismjs/themes/prism-coy.css";
 import "../styles/prism-override.scss";
 
-const Layout = ({ children, mode, toggleMode }) => {
+const Layout = ({ children, mode, toggleMode, currentPath }) => {
   const currentModeStyle = mode === "day" ? dayStyles : nightStyles;
 
   useEffect(() => {
@@ -34,7 +34,11 @@ const Layout = ({ children, mode, toggleMode }) => {
       `}
       render={data => (
         <div style={{ margin: "0 auto" }}>
-          <Header siteTitle={data.site.siteMetadata.title} mode={mode} />
+          <Header
+            siteTitle={data.site.siteMetadata.title}
+            mode={mode}
+            currentPath={currentPath}
+          />
           <Switch
             className="react-switch mode-toggle"
             checked={mode === "day"}

@@ -7,9 +7,9 @@ import Card from "../components/card";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Projects = () => {
+const Projects = ({ location: { pathname } }) => {
   return (
-    <Layout>
+    <Layout currentPath={pathname}>
       <SEO title="Projects" />
       <h1
         style={{

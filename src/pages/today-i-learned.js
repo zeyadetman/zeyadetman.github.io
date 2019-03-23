@@ -5,7 +5,7 @@ import "../styles/projects.css";
 import { connect } from "react-redux";
 import { TwitterShareButton } from "react-twitter-embed";
 
-const Til = ({ mode }) => {
+const Til = ({ mode, location: { pathname } }) => {
   const tils = [
     {
       title: "Gradient text style in CSS",
@@ -33,7 +33,7 @@ const Til = ({ mode }) => {
     }
   ];
   return (
-    <Layout>
+    <Layout currentPath={pathname}>
       <SEO title="Today I Learned" />
       <h1
         style={{

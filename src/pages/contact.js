@@ -3,9 +3,9 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { TwitterFollowButton } from "react-twitter-embed";
 
-export default function Contact() {
+export default function Contact({ location: { pathname } }) {
   return (
-    <Layout>
+    <Layout currentPath={pathname}>
       <SEO title="Contact" />
       <div
         style={{
