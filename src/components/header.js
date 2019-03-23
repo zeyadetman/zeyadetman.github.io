@@ -25,7 +25,8 @@ const Header = ({ siteTitle, mode, currentPath }) => {
             marginBottom: 10,
             marginRight: "1em",
             width: 35,
-            height: 35
+            height: 35,
+            ...(mode === "night" ? { filter: "invert(100%)" } : {})
           }}
           alt="logo"
         />

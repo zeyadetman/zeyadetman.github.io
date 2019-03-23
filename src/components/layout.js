@@ -19,7 +19,7 @@ const Layout = ({ children, mode, toggleMode, currentPath }) => {
     } else {
       document.body.style.backgroundColor = "#fff";
     }
-  });
+  }, [mode]);
 
   return (
     <StaticQuery
@@ -41,8 +41,12 @@ const Layout = ({ children, mode, toggleMode, currentPath }) => {
           />
           <Switch
             className="react-switch mode-toggle"
-            checked={mode === "day"}
-            onChange={toggleMode}
+            checked={(() => (mode === "day" ? true : false))()}
+            onChange={e => {
+              const modeFormatter = e ? "day" : "night";
+              toggleMode(modeFormatter);
+              localStorage.setItem("mode", modeFormatter);
+            }}
             onColor="#86d3ff"
             onHandleColor="#2693e6"
             handleDiameter={30}

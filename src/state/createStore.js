@@ -10,7 +10,8 @@ const reducer = (state, action) => {
   return state;
 };
 
-const initialState = { mode: "day" };
+const initialStateStorage = localStorage.getItem("mode") || "night";
+const initialState = { mode: initialStateStorage === "day" ? "day" : "night" };
 
 const createStore = () => reduxCreateStore(reducer, initialState);
 export default createStore;
