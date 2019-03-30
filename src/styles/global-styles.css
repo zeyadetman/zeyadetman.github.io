@@ -74,3 +74,10 @@ a:hover,
 button :focus {
   outline: none;
 }
+
+.article-meta {
+  background: linear-gradient(to right, rgb(255, 191, 0), rgb(255, 106, 0));
+  color: #000 !important;
+  padding: 5px;
+  border-radius: 5px;
+}

@@ -4,8 +4,8 @@ import SEO from "../components/seo";
 import { frontendProjects, softwareProjects } from "../projects";
 import "../styles/projects.css";
 import Card from "../components/card";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faLink } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Projects = ({ location: { pathname } }) => {
   return (
@@ -32,9 +32,9 @@ const Projects = ({ location: { pathname } }) => {
       </h1>
       <h3 className="projects-title" id="frontendprojects">
         Front-End Development{" "}
-        <a href="#frontendprojects">
+        {/* <a href="#frontendprojects">
           <FontAwesomeIcon icon={faLink} />
-        </a>
+        </a> */}
       </h3>
       <div className="cards">
         {frontendProjects.map((project, i) => (
@@ -48,9 +48,9 @@ const Projects = ({ location: { pathname } }) => {
         id="softwareprojects"
       >
         Software Development{" "}
-        <a href="#softwareprojects">
+        {/* <a href="#softwareprojects">
           <FontAwesomeIcon icon={faLink} />
-        </a>
+        </a> */}
       </h3>
       <div className="cards">
         {softwareProjects.map((project, i) => (

@@ -3,6 +3,20 @@ export const softwareimgs = `/images/projects/software/`;
 
 export const frontendProjects = [
   {
+    title: "Numbers-Properties-Bot",
+    description: "Tweets tracker for the @numberspropsbot twitter bot",
+    imgurl: `${webimgs}numberspropsbot.png`,
+    sourcecodeurl: "https://github.com/zeyadetman/Numbers-Properties-Bot",
+    site: "https://twitter.com/numberspropsbot"
+  },
+  {
+    title: "twitter-client",
+    description: "Twitter Client using GraphQL with ReactJS",
+    imgurl: `${webimgs}twitter-client.png`,
+    sourcecodeurl: "https://github.com/zeyadetman/twitter-client",
+    site: "https://zeyadetman.github.io/twitter-client/"
+  },
+  {
     title: "Moviesta",
     description: "🎞️ The king of Movies",
     imgurl: `${webimgs}moviesta.png`,

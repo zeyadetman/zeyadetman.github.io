@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClock } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faClock } from "@fortawesome/free-solid-svg-icons";
 import "../styles/blogpost.css";
 import { TwitterShareButton } from "react-twitter-embed";
 import SEO from "../components/seo";
@@ -42,11 +42,11 @@ export default function Template({
           >
             {frontmatter.title}
           </h3>
-          <small>
+          <small className="article-meta">
             <span>{frontmatter.date}</span>
             {"   •   "}
             <span>
-              <FontAwesomeIcon icon={faClock} />{" "}
+              {/* <FontAwesomeIcon icon={faClock} />{" "} */}
               {`${timeToRead} ${timeToRead > 1 ? "mins" : "min"} read`}
             </span>
           </small>
