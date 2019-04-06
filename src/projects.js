@@ -3,6 +3,13 @@ export const softwareimgs = `/images/projects/software/`;
 
 export const frontendProjects = [
   {
+    title: "Nonogram",
+    description: "https://en.wikipedia.org/wiki/Nonogram",
+    imgurl: `${webimgs}nonogram.png`,
+    sourcecodeurl: "https://github.com/zeyadetman/Nonogram",
+    site: "https://zeyadetman.github.io/Nonogram/"
+  },
+  {
     title: "Numbers-Properties-Bot",
     description: "Tweets tracker for the @numberspropsbot twitter bot",
     imgurl: `${webimgs}numberspropsbot.png`,
