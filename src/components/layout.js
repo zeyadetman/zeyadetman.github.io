@@ -39,7 +39,7 @@ const Layout = ({ children, mode, toggleMode, currentPath }) => {
             mode={mode}
             currentPath={currentPath}
           />
-          {/* <Switch
+          <Switch
             className="react-switch mode-toggle"
             checked={mode === "day" ? true : false}
             onChange={e => {
@@ -61,7 +61,7 @@ const Layout = ({ children, mode, toggleMode, currentPath }) => {
             height={20}
             width={48}
             id="material-switch"
-          /> */}
+          />
           <div
             style={{
               margin: `0 auto`,
