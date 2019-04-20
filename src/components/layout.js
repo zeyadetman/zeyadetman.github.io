@@ -8,11 +8,12 @@ import "../styles/global-styles.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import "prismjs/themes/prism-coy.css";
 import "../styles/prism-override.scss";
+import ReactGA from 'react-ga';
 
+ReactGA.initialize('UA-50784035-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 const Layout = ({ children, mode, toggleMode, currentPath }) => {
-  // console.log(mode)
   let currentModeStyle = mode === "day" ? dayStyles : nightStyles;
-  // console.log(currentModeStyle)
 
   useEffect(() => {
     if (mode === "night") {
