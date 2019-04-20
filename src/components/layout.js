@@ -10,12 +10,14 @@ import "prismjs/themes/prism-coy.css";
 import "../styles/prism-override.scss";
 
 const Layout = ({ children, mode, toggleMode, currentPath }) => {
-  const currentModeStyle = mode === "day" ? dayStyles : nightStyles;
+  let currentModeStyle = mode === "day" ? dayStyles : nightStyles;
 
   useEffect(() => {
     if (mode === "night") {
       document.body.style.backgroundColor = "#0e0e0e";
+      currentModeStyle = 'night';
     } else {
+      currentModeStyle = 'day';
       document.body.style.backgroundColor = "#fff";
     }
   }, [mode]);
