@@ -5,10 +5,10 @@ const TabCard = ({ page, info }) => (
   <div
     className="card"
     style={{
-      padding: "0 1.5em"
+      padding: "15px 1.5em"
     }}
   >
-    <h3 style={{ textAlign: "center" }}>
+    <h3 style={{ textAlign: "center", marginTop: 0 }}>
       {page.path ? (
         <Link to={page.path}>{page.title}</Link>
       ) : (
