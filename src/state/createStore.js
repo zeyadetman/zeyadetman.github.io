@@ -13,7 +13,11 @@ const reducer = (state, action) => {
 let initialStateStorage;
 
 try {
-  initialStateStorage = localStorage.getItem("mode") || "day";
+  if(!localStorage.getItem("mode")){
+    localStorage.setItem('mode', 'day');
+  };
+
+  initialStateStorage = localStorage.getItem("mode") || "day"
 } catch (err) {
   console.log(err);
 }

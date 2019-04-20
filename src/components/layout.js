@@ -14,10 +14,10 @@ const Layout = ({ children, mode, toggleMode, currentPath }) => {
 
   useEffect(() => {
     if (mode === "night") {
+      currentModeStyle = nightStyles;
       document.body.style.backgroundColor = "#0e0e0e";
-      currentModeStyle = 'night';
     } else {
-      currentModeStyle = 'day';
+      currentModeStyle = dayStyles;
       document.body.style.backgroundColor = "#fff";
     }
   }, [mode]);
