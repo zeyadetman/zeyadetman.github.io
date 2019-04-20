@@ -11,7 +11,9 @@ import "../styles/prism-override.scss";
 import ReactGA from 'react-ga';
 
 ReactGA.initialize('UA-50784035-1');
-ReactGA.pageview(window.location.pathname + window.location.search);
+if (typeof window !== `undefined`) {
+  ReactGA.pageview(window.location.pathname + window.location.search);
+}
 const Layout = ({ children, mode, toggleMode, currentPath }) => {
   let currentModeStyle = mode === "day" ? dayStyles : nightStyles;
 
