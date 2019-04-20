@@ -10,7 +10,7 @@ import "prismjs/themes/prism-coy.css";
 import "../styles/prism-override.scss";
 import ReactGA from 'react-ga';
 
-ReactGA.initialize('UA-50784035-1');
+ReactGA.initialize('UA-50784035-2');
 if (typeof window !== `undefined`) {
   ReactGA.pageview(window.location.pathname + window.location.search);
 }
