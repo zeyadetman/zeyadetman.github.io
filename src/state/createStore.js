@@ -17,13 +17,14 @@ try {
     localStorage.setItem('mode', 'day');
   };
 
-  initialStateStorage = localStorage.getItem("mode") || "day"
+  initialStateStorage = localStorage.getItem("mode") || "day";
+  // console.log(initialStateStorage)
 } catch (err) {
-  console.log(err);
+  initialStateStorage = 'day';
 }
 
 const initialState = {
-  mode: initialStateStorage === "night" ? "night" : "day"
+  mode: initialStateStorage
 };
 
 const createStore = () => reduxCreateStore(reducer, initialState);
