@@ -12,6 +12,7 @@ import {
   faLinkedinIn
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import SeeMore from '../components/SeeMore';
 
 const Home = ({ location: { pathname } }) => {
   return (
@@ -21,7 +22,6 @@ const Home = ({ location: { pathname } }) => {
         style={{
           textAlign: "center",
           margin: "0px auto",
-          paddingTop: "2em",
           width: "80%",
           minWidth: 320
         }}
@@ -39,7 +39,7 @@ const Home = ({ location: { pathname } }) => {
         <h3 className="text-vertical-margin">
           Software Engineer, Front-End Developer
         </h3>
-        <p>I Make Things On The Internet</p>
+        <p>I do stuff <i className="twa twa-zap"></i> on the Internet.</p>
       </div>
       <ul
         style={{
@@ -74,6 +74,8 @@ const Home = ({ location: { pathname } }) => {
           </a>
         </li>
       </ul>
+
+      <SeeMore />
     </Layout>
   );
 };

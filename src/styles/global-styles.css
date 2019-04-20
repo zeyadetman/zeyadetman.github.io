@@ -1,10 +1,10 @@
 body {
-  transition: all 0.5s ease;
+  transition: all 1s ease;
 }
 
 h1,
 p {
-  transition: all 0.1s ease;
+  transition: all 1s ease;
 }
 
 * {
@@ -29,7 +29,7 @@ li {
 }
 
 a {
-  transition: all 0.3s ease;
+  transition: all 1s ease;
   text-decoration: none;
   color: #808080;
 }
@@ -56,18 +56,6 @@ a:hover,
   text-shadow: none;
 }
 
-.text-vertical-margin {
-  margin-top: 5px;
-  margin-bottom: 0;
-}
-
-.mode-toggle {
-  position: fixed !important;
-  width: 70px;
-  bottom: 20px;
-  right: 20px;
-}
-
 .mode-toggle :focus,
 .mode-toggle :hover,
 .mode-toggle,
@@ -80,4 +68,23 @@ button :focus {
   color: #000 !important;
   padding: 5px;
   border-radius: 5px;
+}
+
+.twa {
+  animation-duration: 1s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

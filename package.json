@@ -33,7 +33,6 @@
     "react-dom": "^16.8.0",
     "react-helmet": "^5.2.0",
     "react-redux": "^6.0.0",
-    "react-switch": "^4.0.1",
     "react-twitter-embed": "^2.0.4",
     "react-window-size": "^1.2.2",
     "styled-components": "^4.1.3",

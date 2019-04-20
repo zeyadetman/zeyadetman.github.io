@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { TwitterFollowButton } from "react-twitter-embed";
+import SeeMore from '../components/SeeMore';
 
 export default function Contact({ location: { pathname } }) {
   return (
@@ -45,6 +46,7 @@ export default function Contact({ location: { pathname } }) {
           />
         </div>
       </div>
+      <SeeMore />
     </Layout>
   );
 }

@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useReducer } from "react";
-import { Link, navigate } from "gatsby";
+import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import { useMedia } from "use-media";
 import windowSize from "react-window-size";
 import { dayStyles, nightStyles } from "../styles/modeStyles";
 import "../styles/header.css";
 import Logo from "../../static/images/favicon.ico";
+import '../utils/twemoji-awesome.css';
 
-const Header = ({ siteTitle, mode, currentPath }) => {
+const Header = ({ toggleMode, mode, currentPath }) => {
   const currentModeStyle = mode === "day" ? dayStyles : nightStyles;
-  const [path, setPath] = useState(currentPath || "404");
   const hideMenu = useMedia({ maxWidth: "1111px" }, true);
   const hideMyName = useMedia({ maxWidth: "512px" }, true);
 
@@ -34,20 +34,29 @@ const Header = ({ siteTitle, mode, currentPath }) => {
     }
   );
 
+  const toggleEmoji = toMode => {
+    toggleMode(toMode);
+    try {
+      localStorage.setItem("mode", toMode);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <header
       {...currentModeStyle}
       className={`${currentModeStyle.className} main-header`}
     >
-      <div className="main-logo">
+      <div className="main-logo">     
         <img
           src={Logo}
           style={{
-            marginBottom: 10,
             marginRight: "1em",
             width: 35,
             height: 35,
-            ...(mode === "night" ? { filter: "invert(100%)" } : {})
+            ...(mode === "night" ? { filter: "invert(100%)" } : {}),
+            ...(hideMyName ? {} : {marginBottom: 10})
           }}
           alt="logo"
         />
@@ -59,88 +68,94 @@ const Header = ({ siteTitle, mode, currentPath }) => {
               }}
               className="name-logo"
             >
-              {!hideMyName && `Zeyad Etman`} $
+              {!hideMyName && `Zeyad Etman`}
             </h1>
-            <input
-              autoFocus
-              className="input-path"
-              value={`cd ${path}`}
-              onChange={e => setPath(e.target.value.split(" ")[1] || "")}
-              onKeyPress={e => {
-                if (e.key === "Enter") {
-                  setPath(e.target.value.split(" ")[1]);
-                  path === ".." && currentPath.indexOf("posts") !== -1
-                    ? navigate(currentPath.replace("/posts", "").split("/")[1])
-                    : navigate(path);
-                }
-              }}
-            />
           </React.Fragment>
         )}
       </div>
 
-      {(state.isShowMenuActive || !hideMenu) && (
-        <ul>
-          <li>
-            <Link to="/" activeClassName="active-page-link">
-              home
-            </Link>
-          </li>
-          <li>
-            <Link to="/projects" activeClassName="active-page-link">
-              projects
-            </Link>
-          </li>
-          <li>
-            <Link to="/work" activeClassName="active-page-link">
-              work
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/blog"
-              activeClassName="active-page-link"
-              partiallyActive={true}
-            >
-              blog
-            </Link>
-          </li>
-          <li>
-            <Link to="/today-i-learned" activeClassName="active-page-link">
-              {state.isShowMenuActive ? "til" : "today i learned"}
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact" activeClassName="active-page-link">
-              contact
-            </Link>
-          </li>
-        </ul>
-      )}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center"
+        }}
+      >
+        {(state.isShowMenuActive || !hideMenu) && (
+          <ul>
+            <li>
+              <Link to="/" activeClassName="active-page-link">
+                home
+              </Link>
+            </li>
+            <li>
+              <Link to="/projects" activeClassName="active-page-link">
+                projects
+              </Link>
+            </li>
+            <li>
+              <Link to="/work" activeClassName="active-page-link">
+                work
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/blog"
+                activeClassName="active-page-link"
+                partiallyActive={true}
+              >
+                blog
+              </Link>
+            </li>
+            {/* <li>
+              <Link to="/today-i-learned" activeClassName="active-page-link">
+                {state.isShowMenuActive ? "til" : "today i learned"}
+              </Link>
+            </li> */}
+            <li>
+              <Link to="/contact" activeClassName="active-page-link">
+                contact
+              </Link>
+            </li>
+          </ul>
+        )}
 
-      {hideMenu && (
-        <a
-          href="javascript:void(0)"
-          style={{
-            fontSize: "1.5em"
-          }}
-          onClick={() => {
-            dispatch("TOGGLE_SHOW_MENU");
-          }}
-        >
-          &#9776;
-        </a>
-      )}
+        {hideMenu && (
+          <a
+            href="javascript:void(0)"
+            style={{
+              fontSize: "1.5em",
+              alignSelf: 'flex-end',
+              marginRight: '3px',
+            }}
+            onClick={() => {
+              dispatch("TOGGLE_SHOW_MENU");
+            }}
+          >
+            &#9776;
+          </a>
+        )}
+
+        {
+          mode === "day" ? (
+            <i
+              key={mode}
+              onClick={() => toggleEmoji("night")}
+              className="twa twa-sunny"
+              style={{ fontSize: "2em" }}
+            />
+          ) : (
+            <i
+              key={mode}
+              onClick={() => toggleEmoji("day")}
+              className="twa twa-new-moon"
+              style={{ fontSize: "2em" }}
+            />
+          )
+        }
+
+      </div>
     </header>
   );
-};
-
-Header.propTypes = {
-  siteTitle: PropTypes.string
-};
-
-Header.defaultProps = {
-  siteTitle: ``
 };
 
 export default Header;

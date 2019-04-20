@@ -6,6 +6,7 @@ import Layout from "../components/layout";
 import "../styles/blogpost.css";
 import { TwitterShareButton } from "react-twitter-embed";
 import SEO from "../components/seo";
+import SeeMore from '../components/SeeMore';
 
 export default function Template({
   data // this prop will be injected by the GraphQL query below.
@@ -91,6 +92,7 @@ export default function Template({
           />
         </footer>
       </article>
+      <SeeMore />
     </Layout>
   );
 }

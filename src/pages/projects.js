@@ -21,7 +21,7 @@ const Projects = ({ location: { pathname } }) => {
           flexWrap: "wrap"
         }}
       >
-        <span style={{ marginBottom: 10 }}>Codes &amp; Projects</span>
+        <span style={{ marginBottom: 10 }}>Side Projects &amp; Tools</span>
         <iframe
           src="https://ghbtns.com/github-btn.html?user=zeyadetman&type=follow&count=true"
           frameBorder="0"
