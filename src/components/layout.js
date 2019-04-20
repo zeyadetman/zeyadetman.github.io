@@ -13,6 +13,7 @@ const Layout = ({ children, mode, toggleMode, currentPath }) => {
   let currentModeStyle = mode === "day" ? dayStyles : nightStyles;
 
   useEffect(() => {
+    console.log(mode);
     if (mode === "night") {
       currentModeStyle = nightStyles;
       document.body.style.backgroundColor = "#0e0e0e";

@@ -23,7 +23,7 @@ try {
 }
 
 const initialState = {
-  mode: initialStateStorage === "day" ? "day" : "night"
+  mode: initialStateStorage === "night" ? "night" : "day"
 };
 
 const createStore = () => reduxCreateStore(reducer, initialState);
