@@ -40,6 +40,14 @@ const Header = ({
       "isSupported" in batteryState &&
       "level" in batteryState &&
       "charging" in batteryState &&
+      batteryState.level > 0.6 &&
+      batteryState.charging
+    ) {
+      setSaveBatteryMode(false);
+    } else if (
+      "isSupported" in batteryState &&
+      "level" in batteryState &&
+      "charging" in batteryState &&
       batteryState.level < 0.25 &&
       !batteryState.charging
     ) {
@@ -54,7 +62,7 @@ const Header = ({
     try {
       localStorage.setItem("mode", toMode);
     } catch (error) {
-      console.log(error);
+      return error;
     }
   };
 
