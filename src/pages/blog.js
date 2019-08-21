@@ -2,9 +2,10 @@ import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { StaticQuery, graphql } from "gatsby";
-import ArticleSummary from "../components/ArticleSummary";
+import ArticleSummary from "../components/ArticleSummary/index";
 import { TwitterFollowButton } from "react-twitter-embed";
 import "../styles/blogpost.css";
+import styles from "../styles/blog.module.scss";
 
 export default function blog({ location: { pathname } }) {
   return (
@@ -39,13 +40,7 @@ export default function blog({ location: { pathname } }) {
         render={({ allMarkdownRemark: { edges: posts } }) => {
           return (
             <>
-              <h1
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center"
-                }}
-              >
+              <h1 className={styles.blogPageH1}>
                 Writings & Thoughts
                 <TwitterFollowButton screenName={"zeyadetman"} />
               </h1>

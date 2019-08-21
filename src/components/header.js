@@ -1,31 +1,28 @@
 import React, { useState, useEffect, useReducer } from "react";
 import { Link } from "gatsby";
-import PropTypes from "prop-types";
 import { useMedia } from "use-media";
 import windowSize from "react-window-size";
 import { dayStyles, nightStyles } from "../styles/modeStyles";
 import "../styles/header.css";
 import Logo from "../../static/images/favicon.ico";
-import '../utils/twemoji-awesome.css';
+import { useBattery } from "react-use";
+import "../utils/twemoji-awesome.css";
 
-const Header = ({ toggleMode, mode, currentPath }) => {
+const Header = ({
+  toggleMode,
+  mode,
+  currentPath,
+  isSaveBatteryMode,
+  setSaveBatteryMode
+}) => {
   const currentModeStyle = mode === "day" ? dayStyles : nightStyles;
   const hideMenu = useMedia({ maxWidth: "1111px" }, true);
   const hideMyName = useMedia({ maxWidth: "512px" }, true);
-
   const [state, dispatch] = useReducer(
     (state, action) => {
       if (action === "TOGGLE_SHOW_MENU") {
         return { ...state, isShowMenuActive: !state.isShowMenuActive };
       }
-
-      // if (action === "HIDE_MENU") {
-      //   return { ...state, hideMenu: useMedia({ maxWidth: "1111px" }) };
-      // }
-
-      // if (action === "HIDE_MY_NAME") {
-      //   return { ...state, hideMyName: useMedia({ maxWidth: "512px" }) };
-      // }
     },
     {
       isShowMenuActive: false,
@@ -33,6 +30,24 @@ const Header = ({ toggleMode, mode, currentPath }) => {
       hideMyName
     }
   );
+  let batteryState = useBattery();
+  if (!isSaveBatteryMode) {
+    batteryState = {};
+  }
+
+  useEffect(() => {
+    if (
+      "isSupported" in batteryState &&
+      "level" in batteryState &&
+      "charging" in batteryState &&
+      batteryState.level < 0.25 &&
+      !batteryState.charging
+    ) {
+      if (mode === "day" && isSaveBatteryMode) {
+        toggleMode();
+      }
+    }
+  }, [batteryState]);
 
   const toggleEmoji = toMode => {
     toggleMode(toMode);
@@ -46,9 +61,8 @@ const Header = ({ toggleMode, mode, currentPath }) => {
   return (
     <header
       {...currentModeStyle}
-      className={`${currentModeStyle.className} main-header`}
-    >
-      <div className="main-logo">     
+      className={`${currentModeStyle.className} main-header`}>
+      <div className="main-logo">
         <img
           src={Logo}
           style={{
@@ -56,7 +70,7 @@ const Header = ({ toggleMode, mode, currentPath }) => {
             width: 35,
             height: 35,
             ...(mode === "night" ? { filter: "invert(100%)" } : {}),
-            ...(hideMyName ? {} : {marginBottom: 10})
+            ...(hideMyName ? {} : { marginBottom: 10 })
           }}
           alt="logo"
         />
@@ -66,8 +80,7 @@ const Header = ({ toggleMode, mode, currentPath }) => {
               style={{
                 fontSize: "1.2em"
               }}
-              className="name-logo"
-            >
+              className="name-logo">
               {!hideMyName && `Zeyad Etman`}
             </h1>
           </React.Fragment>
@@ -78,8 +91,7 @@ const Header = ({ toggleMode, mode, currentPath }) => {
         style={{
           display: "flex",
           alignItems: "center"
-        }}
-      >
+        }}>
         {(state.isShowMenuActive || !hideMenu) && (
           <ul>
             <li>
@@ -101,8 +113,7 @@ const Header = ({ toggleMode, mode, currentPath }) => {
               <Link
                 to="/blog"
                 activeClassName="active-page-link"
-                partiallyActive={true}
-              >
+                partiallyActive={true}>
                 blog
               </Link>
             </li>
@@ -121,38 +132,49 @@ const Header = ({ toggleMode, mode, currentPath }) => {
 
         {hideMenu && (
           <a
-            href="javascript:void(0)"
             style={{
               fontSize: "1.5em",
-              alignSelf: 'flex-end',
-              marginRight: '3px',
+              alignSelf: "flex-end",
+              marginRight: "3px"
             }}
             onClick={() => {
               dispatch("TOGGLE_SHOW_MENU");
-            }}
-          >
+            }}>
             &#9776;
           </a>
         )}
 
-        {
-          mode === "day" ? (
-            <i
-              key={mode}
-              onClick={() => toggleEmoji("night")}
-              className="twa twa-sunny"
-              style={{ fontSize: "2em" }}
-            />
-          ) : (
-            <i
-              key={mode}
-              onClick={() => toggleEmoji("day")}
-              className="twa twa-new-moon"
-              style={{ fontSize: "2em" }}
-            />
-          )
-        }
+        {mode === "day" ? (
+          <i
+            title="Day mode is on"
+            onClick={() => toggleEmoji("night")}
+            className="twa twa-sunny"
+            style={{ fontSize: "2em" }}
+          />
+        ) : (
+          <i
+            title="Dark mode is on"
+            onClick={() => toggleEmoji("day")}
+            className="twa twa-new-moon"
+            style={{ fontSize: "2em" }}
+          />
+        )}
 
+        {isSaveBatteryMode ? (
+          <i
+            title="Save battery mode is on"
+            onClick={() => setSaveBatteryMode(false)}
+            className="twa twa-battery"
+            style={{ fontSize: "2em" }}
+          />
+        ) : (
+          <i
+            title="Save battery mode is off"
+            onClick={() => setSaveBatteryMode(true)}
+            className="twa twa-electric-plug"
+            style={{ fontSize: "2em" }}
+          />
+        )}
       </div>
     </header>
   );

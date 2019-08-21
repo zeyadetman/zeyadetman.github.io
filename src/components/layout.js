@@ -8,14 +8,17 @@ import "../styles/global-styles.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import "prismjs/themes/prism-coy.css";
 import "../styles/prism-override.scss";
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga";
 
-ReactGA.initialize('UA-50784035-2');
+ReactGA.initialize("UA-50784035-2");
 if (typeof window !== `undefined`) {
   ReactGA.pageview(window.location.pathname + window.location.search);
 }
 const Layout = ({ children, mode, toggleMode, currentPath }) => {
   let currentModeStyle = mode === "day" ? dayStyles : nightStyles;
+  const [isSaveBatteryMode, setSaveBatteryMode] = useState(
+    localStorage.getItem("isSaveBatteryMode") || false
+  );
 
   useEffect(() => {
     if (mode === "night") {
@@ -45,6 +48,11 @@ const Layout = ({ children, mode, toggleMode, currentPath }) => {
             mode={mode}
             currentPath={currentPath}
             toggleMode={toggleMode}
+            isSaveBatteryMode={isSaveBatteryMode}
+            setSaveBatteryMode={value => {
+              localStorage.setItem("isSaveBatteryMode", value);
+              setSaveBatteryMode(value);
+            }}
           />
           <div
             style={{
@@ -52,15 +60,13 @@ const Layout = ({ children, mode, toggleMode, currentPath }) => {
               maxWidth: 960,
               padding: `0px 1.0875rem 1.45rem`,
               paddingTop: 0
-            }}
-          >
+            }}>
             <main
               {...currentModeStyle}
               style={{
                 ...currentModeStyle.style
               }}
-              mode={mode}
-            >
+              mode={mode}>
               {children}
             </main>
           </div>
