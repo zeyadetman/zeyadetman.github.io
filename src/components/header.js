@@ -36,7 +36,6 @@ const Header = ({
   }
 
   useEffect(() => {
-    console.log(batteryState);
     if (
       "isSupported" in batteryState &&
       "level" in batteryState &&
@@ -63,7 +62,7 @@ const Header = ({
     try {
       localStorage.setItem("mode", toMode);
     } catch (error) {
-      console.log(error);
+      return error;
     }
   };
 
