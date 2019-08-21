@@ -1,0 +1,28 @@
+.tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & span {
+    padding: 2px 5px 1px 5px;
+    font-size: 12px;
+    text-transform: capitalize;
+    display: inline-block;
+    vertical-align: text-bottom;
+    color: #0d0d0d;
+  }
+
+  & a {
+    margin-left: 5px;
+  }
+}
+
+.jobTitle {
+  margin-bottom: 5px;
+  font-weight: 600;
+  background-color: rgb(226, 226, 226);
+}
+
+.jobDate {
+  background-color: rgb(255, 202, 43);
+}
