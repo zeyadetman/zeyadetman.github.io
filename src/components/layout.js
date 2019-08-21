@@ -17,7 +17,8 @@ if (typeof window !== `undefined`) {
 const Layout = ({ children, mode, toggleMode, currentPath }) => {
   let currentModeStyle = mode === "day" ? dayStyles : nightStyles;
   const [isSaveBatteryMode, setSaveBatteryMode] = useState(
-    localStorage.getItem("isSaveBatteryMode") || false
+    (global && global.localStorage && global.localStorage.isSaveBatteryMode) ||
+      false
   );
 
   useEffect(() => {
