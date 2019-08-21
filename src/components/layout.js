@@ -20,7 +20,7 @@ const Layout = ({ children, mode, toggleMode, currentPath }) => {
     (global &&
       global.localStorage &&
       Number(global.localStorage.isSaveBatteryMode)) ||
-      false
+      1
   );
 
   useEffect(() => {
