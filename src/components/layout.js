@@ -17,7 +17,9 @@ if (typeof window !== `undefined`) {
 const Layout = ({ children, mode, toggleMode, currentPath }) => {
   let currentModeStyle = mode === "day" ? dayStyles : nightStyles;
   const [isSaveBatteryMode, setSaveBatteryMode] = useState(
-    (global && global.localStorage && global.localStorage.isSaveBatteryMode) ||
+    (global &&
+      global.localStorage &&
+      Number(global.localStorage.isSaveBatteryMode)) ||
       false
   );
 
@@ -51,7 +53,7 @@ const Layout = ({ children, mode, toggleMode, currentPath }) => {
             toggleMode={toggleMode}
             isSaveBatteryMode={isSaveBatteryMode}
             setSaveBatteryMode={value => {
-              localStorage.setItem("isSaveBatteryMode", value);
+              localStorage.setItem("isSaveBatteryMode", value ? 1 : 0);
               setSaveBatteryMode(value);
             }}
           />

@@ -36,7 +36,16 @@ const Header = ({
   }
 
   useEffect(() => {
+    console.log(batteryState);
     if (
+      "isSupported" in batteryState &&
+      "level" in batteryState &&
+      "charging" in batteryState &&
+      batteryState.level > 0.6 &&
+      batteryState.charging
+    ) {
+      setSaveBatteryMode(false);
+    } else if (
       "isSupported" in batteryState &&
       "level" in batteryState &&
       "charging" in batteryState &&
