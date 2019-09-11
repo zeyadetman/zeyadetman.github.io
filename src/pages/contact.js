@@ -31,7 +31,8 @@ export default function Contact({ location: { pathname } }) {
                 fontWeight: 700,
                 background: "linear-gradient(to right, #ffbf00, #ff6a00)",
                 lineHeight: "84px",
-                color: "#000"
+                color: "#000",
+                borderRadius: '50px',
               }}
             >
               zeyadetman@gmail.com
