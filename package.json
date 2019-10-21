@@ -11,6 +11,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "@hot-loader/react-dom": "^16.8.6",
+    "disqus-react": "^1.0.7",
     "gatsby": "^2.3.25",
     "gatsby-image": "^2.0.29",
     "gatsby-plugin-manifest": "^2.0.17",

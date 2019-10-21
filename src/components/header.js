@@ -125,11 +125,11 @@ const Header = ({
                 blog
               </Link>
             </li>
-            {/* <li>
-              <Link to="/today-i-learned" activeClassName="active-page-link">
-                {state.isShowMenuActive ? "til" : "today i learned"}
+            <li>
+              <Link to="/snippets" activeClassName="active-page-link">
+                Snippets
               </Link>
-            </li> */}
+            </li>
             <li>
               <Link to="/contact" activeClassName="active-page-link">
                 contact

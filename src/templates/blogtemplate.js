@@ -6,7 +6,8 @@ import Layout from "../components/layout";
 import "../styles/blogpost.css";
 import { TwitterShareButton } from "react-twitter-embed";
 import SEO from "../components/seo";
-import SeeMore from '../components/SeeMore';
+import SeeMore from "../components/SeeMore";
+import Disqus from "disqus-react";
 
 export default function Template({
   data // this prop will be injected by the GraphQL query below.
@@ -20,35 +21,45 @@ export default function Template({
     wordCount
   } = markdownRemark;
   const { toArabic } = frontmatter;
+  const disqusShortname = "zeyadetman";
+  const disqusConfig = {
+    url: `https://zeyadetman.github.io/${encodeURI(slug)}`,
+    identifier: slug,
+    title: frontmatter.title
+  };
 
   return (
     <Layout currentPath={`/${slug}`}>
       <SEO title={frontmatter.title} />
       <article
         className="blog-post-container article"
-        style={{ width: "70%", margin: "0 auto", minWidth: 320 }}
-      >
+        style={{ width: "70%", margin: "0 auto", minWidth: 320 }}>
         <header
           style={{
             borderBottom: "2px dashed",
             paddingBottom: 15
-          }}
-        >
+          }}>
           <h3
             style={{
               fontSize: "1.6em",
               margin: "10px 0",
               ...(slug.includes("/ar/") && toArabic && { direction: "rtl" })
-            }}
-          >
+            }}>
             {frontmatter.title}
           </h3>
           <small className="article-meta">
             <span>{frontmatter.date}</span>
             {"   •   "}
             <span>
-              {/* <FontAwesomeIcon icon={faClock} />{" "} */}
               {`${timeToRead} ${timeToRead > 1 ? "mins" : "min"} read`}
+            </span>
+            {"   •   "}
+            <span>
+              <Disqus.CommentCount
+                shortname={disqusShortname}
+                config={disqusConfig}>
+                Comments
+              </Disqus.CommentCount>
             </span>
           </small>
           {toArabic && (
@@ -57,8 +68,7 @@ export default function Template({
                 border: "1px dashed",
                 padding: 10,
                 marginBottom: 0
-              }}
-            >
+              }}>
               {!slug.includes("/ar/") && toArabic && (
                 <Link to={`/${slug}ar/`}>Translated to Arabic</Link>
               )}
@@ -80,8 +90,7 @@ export default function Template({
         <footer
           style={{
             textAlign: "center"
-          }}
-        >
+          }}>
           <TwitterShareButton
             url={`https://zeyadetman.github.io/${encodeURI(slug)}`}
             options={{
@@ -89,6 +98,11 @@ export default function Template({
               via: "zeyadetman",
               size: "large"
             }}
+          />
+
+          <Disqus.DiscussionEmbed
+            shortname={disqusShortname}
+            config={disqusConfig}
           />
         </footer>
       </article>
