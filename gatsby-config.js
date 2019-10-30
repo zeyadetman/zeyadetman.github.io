@@ -7,6 +7,12 @@ module.exports = {
     owner: "zeyadetman"
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/layout`)
+      }
+    },
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {

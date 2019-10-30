@@ -1,5 +1,4 @@
 import React from "react";
-import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { frontendProjects, softwareProjects } from "../projects";
 import "../styles/projects.css";
@@ -9,7 +8,7 @@ import Card from "../components/card";
 
 const Projects = ({ location: { pathname } }) => {
   return (
-    <Layout currentPath={pathname}>
+    <>
       <SEO title="Projects" />
       <h1
         style={{
@@ -19,8 +18,7 @@ const Projects = ({ location: { pathname } }) => {
           textAlign: "center",
           marginBottom: 25,
           flexWrap: "wrap"
-        }}
-      >
+        }}>
         <span style={{ marginBottom: 10 }}>Side Projects &amp; Tools</span>
         <iframe
           src="https://ghbtns.com/github-btn.html?user=zeyadetman&type=follow&count=true"
@@ -45,8 +43,7 @@ const Projects = ({ location: { pathname } }) => {
       <h3
         style={{ marginTop: 65 }}
         className="projects-title"
-        id="softwareprojects"
-      >
+        id="softwareprojects">
         Software Development{" "}
         {/* <a href="#softwareprojects">
           <FontAwesomeIcon icon={faLink} />
@@ -57,7 +54,7 @@ const Projects = ({ location: { pathname } }) => {
           <Card project={project} key={i} />
         ))}
       </div>
-    </Layout>
+    </>
   );
 };
 

@@ -44,7 +44,7 @@ const Work = ({ mode, location: { pathname } }) => {
     }
   ];
   return (
-    <Layout currentPath={pathname}>
+    <>
       <SEO
         title="Work"
         keywords={["work", "hire", "frontend", "developer", "arqamfc", "lynks"]}
@@ -81,7 +81,7 @@ const Work = ({ mode, location: { pathname } }) => {
           </div>
         ))}
       </div>
-    </Layout>
+    </>
   );
 };
 

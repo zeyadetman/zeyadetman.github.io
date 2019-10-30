@@ -1,5 +1,4 @@
 import React from "react";
-import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { StaticQuery, graphql } from "gatsby";
 import ArticleSummary from "../components/ArticleSummary/index";
@@ -9,7 +8,7 @@ import styles from "../styles/blog.module.scss";
 
 export default function blog({ location: { pathname } }) {
   return (
-    <Layout currentPath={pathname}>
+    <>
       <SEO title="Blog" keywords={[`zeyadetman`, `blog`, "technical"]} />
       <StaticQuery
         query={graphql`
@@ -62,6 +61,6 @@ export default function blog({ location: { pathname } }) {
           );
         }}
       />
-    </Layout>
+    </>
   );
 }

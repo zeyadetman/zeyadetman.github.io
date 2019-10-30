@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Avatar from "../../static/images/me.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,11 +11,11 @@ import {
   faLinkedinIn
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import SeeMore from '../components/SeeMore';
+import SeeMore from "../components/SeeMore";
 
 const Home = ({ location: { pathname } }) => {
   return (
-    <Layout currentPath="/home/">
+    <>
       <SEO title="Home" keywords={[`zeyadetman`, `portfolio`]} />
       <div
         style={{
@@ -24,8 +23,7 @@ const Home = ({ location: { pathname } }) => {
           margin: "0px auto",
           width: "80%",
           minWidth: 320
-        }}
-      >
+        }}>
         <img
           src={Avatar}
           style={{
@@ -39,15 +37,16 @@ const Home = ({ location: { pathname } }) => {
         <h3 className="text-vertical-margin">
           Software Engineer, Front-End Developer
         </h3>
-        <p>I do stuff <i className="twa twa-zap"></i> on the Internet.</p>
+        <p>
+          I do stuff <i className="twa twa-zap"></i> on the Internet.
+        </p>
       </div>
       <ul
         style={{
           display: "flex",
           justifyContent: "center"
         }}
-        className="social-network"
-      >
+        className="social-network">
         <li>
           <a href="https://github.com/zeyadetman">
             <FontAwesomeIcon icon={faGithub} />
@@ -74,9 +73,8 @@ const Home = ({ location: { pathname } }) => {
           </a>
         </li>
       </ul>
-
       <SeeMore />
-    </Layout>
+    </>
   );
 };
 

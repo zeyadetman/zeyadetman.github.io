@@ -14,6 +14,7 @@
     "disqus-react": "^1.0.7",
     "gatsby": "^2.3.25",
     "gatsby-image": "^2.0.29",
+    "gatsby-plugin-layout": "^1.1.13",
     "gatsby-plugin-manifest": "^2.0.17",
     "gatsby-plugin-offline": "^2.0.24",
     "gatsby-plugin-page-creator": "^2.0.8",

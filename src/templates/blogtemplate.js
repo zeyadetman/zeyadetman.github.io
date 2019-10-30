@@ -29,7 +29,7 @@ export default function Template({
   };
 
   return (
-    <Layout currentPath={`/${slug}`}>
+    <>
       <SEO title={frontmatter.title} />
       <article
         className="blog-post-container article"
@@ -107,7 +107,7 @@ export default function Template({
         </footer>
       </article>
       <SeeMore />
-    </Layout>
+    </>
   );
 }
 

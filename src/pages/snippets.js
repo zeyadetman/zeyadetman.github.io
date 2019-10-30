@@ -41,7 +41,7 @@ const Snippets = ({ mode, location: { pathname } }) => {
     }
   ];
   return (
-    <Layout currentPath={pathname}>
+    <>
       <SEO title="Snippets" />
       <h1
         style={{
@@ -103,7 +103,7 @@ const Snippets = ({ mode, location: { pathname } }) => {
           );
         })}
       </div>
-    </Layout>
+    </>
   );
 };
 
