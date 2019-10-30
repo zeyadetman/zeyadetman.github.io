@@ -107,11 +107,11 @@ const Header = ({
                 home
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/projects" activeClassName="active-page-link">
                 projects
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/work" activeClassName="active-page-link">
                 work
@@ -125,11 +125,11 @@ const Header = ({
                 blog
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/snippets" activeClassName="active-page-link">
                 Snippets
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/contact" activeClassName="active-page-link">
                 contact

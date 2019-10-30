@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import Layout from "../components/layout";
 import Tag from "../components/Tag/index";
 import SEO from "../components/seo";
 import { connect } from "react-redux";

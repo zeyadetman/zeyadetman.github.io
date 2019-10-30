@@ -24,7 +24,7 @@ export default function Contact({ location: { pathname } }) {
             <p
               style={{
                 textAlign: "center",
-                fontSize: "1.7em",
+                fontSize: "1.5em",
                 fontWeight: 700,
                 background: "linear-gradient(to right, #ffbf00, #ff6a00)",
                 lineHeight: "84px",

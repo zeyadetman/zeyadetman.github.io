@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "gatsby";
 
 import SEO from "../components/seo";
+import "../styles/projects.css";
 import Avatar from "../../static/images/me.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

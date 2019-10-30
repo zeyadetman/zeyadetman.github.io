@@ -6,13 +6,12 @@ const TabCard = ({ page, info }) => (
     className="card"
     style={{
       padding: "15px 1.5em"
-    }}
-  >
+    }}>
     <h3 style={{ textAlign: "center", marginTop: 0 }}>
       {page.path ? (
         <Link to={page.path}>{page.title}</Link>
       ) : (
-        <a href="javascript:void(0);">{page.title}</a>
+        <a href={page.url}>{page.title}</a>
       )}
     </h3>
     {info}
@@ -21,7 +20,10 @@ const TabCard = ({ page, info }) => (
 
 const tabs = [
   {
-    page: { path: "/projects", title: "Side Projects & Tools" },
+    page: {
+      url: "https://github.com/zeyadetman",
+      title: "Side Projects & Tools"
+    },
     info:
       "I'm building some cool stuff to learn new things, and make the internet a better place."
   },
@@ -66,8 +68,7 @@ export default function SeeMore() {
         display: "grid",
         gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
         gridGap: "15px"
-      }}
-    >
+      }}>
       {tabs.map(({ page, info }) => (
         <TabCard page={page} key={page.title} info={info} />
       ))}
