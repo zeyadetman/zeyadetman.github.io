@@ -1,0 +1,202 @@
+@font-face {
+  font-family: "Source Sans Pro, Black";
+  src: url(../../static/fonts/Source_Sans_Pro/SourceSansPro-Black.ttf);
+}
+
+@font-face {
+  font-family: "Source Sans Pro, Bold";
+  src: url(../../static/fonts/Source_Sans_Pro/SourceSansPro-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Source Sans Pro, SemiBold";
+  src: url(../../static/fonts/Source_Sans_Pro/SourceSansPro-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "Source Sans Pro, Regular";
+  src: url(../../static/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf);
+}
+
+@font-face {
+  font-family: "PT Serif, Regular";
+  src: url(../../static/fonts/PT_Serif/PTSerif-Regular.ttf);
+}
+
+@font-face {
+  font-family: "PT Serif, Bold";
+  src: url(../../static/fonts/PT_Serif/PTSerif-Bold.ttf);
+}
+
+body {
+  transition: all 1s ease;
+}
+
+h1,
+p {
+  transition: all 1s ease;
+}
+
+* {
+  font-family: "PT Serif, Regular";
+}
+
+p {
+  line-height: 20px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  padding-left: 0.7em;
+  padding-right: 0.7em;
+  margin-bottom: 0;
+  word-break: break-word;
+}
+
+a {
+  transition: all 1s ease;
+  text-decoration: none;
+  color: #808080;
+  font-family: "Source Sans Pro, Bold";
+}
+
+.social-network li a:hover {
+  color: #000;
+}
+
+.name-logo,
+a:hover,
+.active-page-link {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ffbf00),
+    to(#ff6a00)
+  );
+  background: linear-gradient(to right, #ffbf00, #ff6a00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  text-shadow: none;
+}
+
+a:hover,
+.active-page-link {
+  border-bottom: 2px solid #0793fa;
+  transition: none;
+}
+
+.mode-toggle :focus,
+.mode-toggle :hover,
+.mode-toggle,
+button :focus {
+  outline: none;
+}
+
+.article-meta {
+  padding-top: 1px;
+  border-top: 2px solid #0095ff;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  color: #000;
+  font-size: 0.8em;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & * {
+    font-family: "Source Sans Pro, Bold";
+  }
+
+  & img {
+    width: 25px;
+  }
+}
+
+.twa {
+  animation-duration: 1s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Source Sans Pro, Black";
+}
+
+h3 a {
+  font-family: "Source Sans Pro, Bold";
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.blog-post-content {
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.blog-post-content {
+  & :not(pre) > code[class*="language-"] {
+    display: inline;
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    color: #24292e;
+    background-color: rgba(27, 31, 35, 0.05);
+    border-radius: 3px;
+  }
+
+  & .gatsby-highlight {
+    background-color: #2d2d2d00;
+  }
+}
+
+.night-mode .blog-post-content {
+  & :not(pre) > code[class*="language-"] {
+    color: #313131;
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+pre[class*="language-"].line-numbers.line-numbers code {
+  padding-left: 2rem !important;
+}
+
+.gatsby-highlight pre[class*="language-"] > code {
+  border-left: 10px solid #ffc65600 !important;
+  box-shadow: -1px 0px 0px 0px #ffc65600, 0px 0px 0px 1px #dfdfdf !important;
+}
+
+.line-numbers-rows {
+  display: none !important;
+}

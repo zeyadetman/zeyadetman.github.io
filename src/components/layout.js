@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from "gatsby";
 import { dayStyles, nightStyles } from "../styles/modeStyles";
 import Header from "./header";
 import { connect } from "react-redux";
-import "../styles/global-styles.css";
+import "../styles/globalStyles.scss";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import "prismjs/themes/prism-coy.css";
 import "../styles/prism-override.scss";

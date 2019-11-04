@@ -75,8 +75,8 @@ const Header = ({
           src={Logo}
           style={{
             marginRight: "1em",
-            width: 35,
-            height: 35,
+            width: 50,
+            height: 50,
             ...(mode === "night" ? { filter: "invert(100%)" } : {}),
             ...(hideMyName ? {} : { marginBottom: 10 })
           }}
@@ -86,7 +86,7 @@ const Header = ({
           <React.Fragment>
             <h1
               style={{
-                fontSize: "1.2em"
+                fontSize: "2rem"
               }}
               className="name-logo">
               {!hideMyName && `Zeyad Etman`}
@@ -138,51 +138,53 @@ const Header = ({
           </ul>
         )}
 
-        {hideMenu && (
-          <a
-            style={{
-              fontSize: "1.5em",
-              alignSelf: "flex-end",
-              marginRight: "3px"
-            }}
-            onClick={() => {
-              dispatch("TOGGLE_SHOW_MENU");
-            }}>
-            &#9776;
-          </a>
-        )}
+        <div>
+          {hideMenu && (
+            <span
+              style={{
+                fontSize: "1.5em",
+                alignSelf: "flex-end",
+                marginRight: "3px"
+              }}
+              onClick={() => {
+                dispatch("TOGGLE_SHOW_MENU");
+              }}>
+              &#9776;
+            </span>
+          )}
 
-        {mode === "day" ? (
-          <i
-            title="Day mode is on"
-            onClick={() => toggleEmoji("night")}
-            className="twa twa-sunny"
-            style={{ fontSize: "2em" }}
-          />
-        ) : (
-          <i
-            title="Dark mode is on"
-            onClick={() => toggleEmoji("day")}
-            className="twa twa-new-moon"
-            style={{ fontSize: "2em" }}
-          />
-        )}
+          {mode === "day" ? (
+            <i
+              title="Day mode is on"
+              onClick={() => toggleEmoji("night")}
+              className="twa twa-sunny"
+              style={{ fontSize: "2em" }}
+            />
+          ) : (
+            <i
+              title="Dark mode is on"
+              onClick={() => toggleEmoji("day")}
+              className="twa twa-new-moon"
+              style={{ fontSize: "2em" }}
+            />
+          )}
 
-        {isSaveBatteryMode ? (
-          <i
-            title="Save battery mode is on"
-            onClick={() => setSaveBatteryMode(false)}
-            className="twa twa-battery"
-            style={{ fontSize: "2em" }}
-          />
-        ) : (
-          <i
-            title="Save battery mode is off"
-            onClick={() => setSaveBatteryMode(true)}
-            className="twa twa-electric-plug"
-            style={{ fontSize: "2em" }}
-          />
-        )}
+          {isSaveBatteryMode ? (
+            <i
+              title="Save battery mode is on"
+              onClick={() => setSaveBatteryMode(false)}
+              className="twa twa-battery"
+              style={{ fontSize: "2em" }}
+            />
+          ) : (
+            <i
+              title="Save battery mode is off"
+              onClick={() => setSaveBatteryMode(true)}
+              className="twa twa-electric-plug"
+              style={{ fontSize: "2em" }}
+            />
+          )}
+        </div>
       </div>
     </header>
   );

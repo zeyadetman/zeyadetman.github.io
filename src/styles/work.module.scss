@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 35px;
+  margin-bottom: 4rem;
 }
 
 .workList {
@@ -17,6 +17,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  & a:hover {
+    border-bottom: none;
+  }
 }
 
 .logoContainer {

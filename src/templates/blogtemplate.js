@@ -5,6 +5,7 @@ import { TwitterShareButton } from "react-twitter-embed";
 import SEO from "../components/seo";
 import SeeMore from "../components/SeeMore";
 import Disqus from "disqus-react";
+import GLOBAL_IMAGES from "../globalImages";
 
 export default function Template({
   data // this prop will be injected by the GraphQL query below.
@@ -30,39 +31,19 @@ export default function Template({
       <article
         className="blog-post-container article"
         style={{ width: "70%", margin: "0 auto", minWidth: 320 }}>
-        <header
-          style={{
-            borderBottom: "2px dashed",
-            paddingBottom: 15
-          }}>
-          <h3
+        <header>
+          <h1
             style={{
               fontSize: "1.6em",
               margin: "10px 0",
               ...(slug.includes("/ar/") && toArabic && { direction: "rtl" })
             }}>
             {frontmatter.title}
-          </h3>
-          <small className="article-meta">
-            <span>{frontmatter.date}</span>
-            {"   •   "}
-            <span>
-              {`${timeToRead} ${timeToRead > 1 ? "mins" : "min"} read`}
-            </span>
-            {"   •   "}
-            <span>
-              <Disqus.CommentCount
-                shortname={disqusShortname}
-                config={disqusConfig}>
-                Comments
-              </Disqus.CommentCount>
-            </span>
-          </small>
+          </h1>
+
           {toArabic && (
             <p
               style={{
-                border: "1px dashed",
-                padding: 10,
                 marginBottom: 0
               }}>
               {!slug.includes("/ar/") && toArabic && (
@@ -75,6 +56,31 @@ export default function Template({
               )}
             </p>
           )}
+          <small className="article-meta">
+            <div>
+              <span>{frontmatter.date}</span>
+              {"   •   "}
+              <span>
+                {`${timeToRead} ${timeToRead > 1 ? "mins" : "min"} read`}
+              </span>
+              {"   •   "}
+              <span>
+                <Disqus.CommentCount
+                  shortname={disqusShortname}
+                  config={disqusConfig}>
+                  Comments
+                </Disqus.CommentCount>
+              </span>
+            </div>
+            <a
+              href={`https://twitter.com/intent/tweet?text=${encodeURI(
+                "Read: " + frontmatter.title
+              )}&url=${`https://zeyadetman.github.io/${encodeURI(
+                slug
+              )}`}&via=zeyadetman`}>
+              <img src={GLOBAL_IMAGES.twitterLogo} />
+            </a>
+          </small>
         </header>
         <div
           style={{

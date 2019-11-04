@@ -1,13 +1,16 @@
 .articleSummary {
-  margin-bottom: 55px;
   width: 70%;
   margin-left: auto;
   margin-right: auto;
   min-width: 320px;
-  border-bottom: 2px solid #0095ff;
+  margin-bottom: 4rem;
 
   & h3 {
     font-size: 1.6em;
     margin: 10px 0;
+
+    & a:hover {
+      border-bottom: none;
+    }
   }
 }

@@ -33,10 +33,8 @@ const Home = ({ location: { pathname } }) => {
             boxShadow: "0px 2px 14px rgba(0,0,0,0.6)"
           }}
         />
-        <h2 className="text-vertical-margin">Zeyad Etman</h2>
-        <h3 className="text-vertical-margin">
-          Software Engineer, Front-End Developer
-        </h3>
+        <h1 style={{ marginBottom: 0 }}>Zeyad Etman</h1>
+        <h2 style={{ margin: 0 }}>Front-End Engineer</h2>
         <p>
           I do stuff <i className="twa twa-zap"></i> on the Internet.
         </p>
