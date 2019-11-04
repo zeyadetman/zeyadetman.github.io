@@ -67,6 +67,7 @@ a {
 
 .social-network li a:hover {
   color: #000;
+  border-bottom: none;
 }
 
 .name-logo,
@@ -119,6 +120,10 @@ button :focus {
   & img {
     width: 25px;
   }
+
+  & a:hover {
+    border-bottom: none;
+  }
 }
 
 .twa {
@@ -144,6 +149,7 @@ h1,
 h2,
 h3 {
   font-family: "Source Sans Pro, Black";
+  letter-spacing: -1px;
 }
 
 h3 a {
@@ -173,6 +179,7 @@ h1 {
 
   & .gatsby-highlight {
     background-color: #2d2d2d00;
+    padding: 1em 0 !important;
   }
 }
 
@@ -199,4 +206,27 @@ pre[class*="language-"].line-numbers.line-numbers code {
 
 .line-numbers-rows {
   display: none !important;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  font-size: 0.8rem !important;
+}
+
+.pic-of-me {
+  background: url(../../static/images/avatar.jpeg);
+  margin: 0 auto;
+  transition: background-color 1000ms linear;
+  transition: all 3s;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &:hover {
+    transform: rotate(1080deg);
+    background: url(../../static/images/me.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }

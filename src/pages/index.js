@@ -1,8 +1,8 @@
-import React from "react";
-
+import React, { useState } from "react";
 import SEO from "../components/seo";
 import "../styles/projects.css";
-import Avatar from "../../static/images/me.jpg";
+import Picture from "../../static/images/me.jpg";
+import Avatar from "../../static/images/avatar.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookF,
@@ -14,6 +14,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import SeeMore from "../components/SeeMore";
 
 const Home = ({ location: { pathname } }) => {
+  const [image, setImage] = useState(Avatar);
   return (
     <>
       <SEO title="Home" keywords={[`zeyadetman`, `portfolio`]} />
@@ -24,12 +25,15 @@ const Home = ({ location: { pathname } }) => {
           width: "80%",
           minWidth: 320
         }}>
-        <img
-          src={Avatar}
+        <div
+          // src={image}
+          className="pic-of-me"
           style={{
             borderRadius: "50%",
             width: 200,
-            border: "5px solid #f2ece0",
+            minWidth: 200,
+            height: 200,
+            border: "5px solid #f8ad36",
             boxShadow: "0px 2px 14px rgba(0,0,0,0.6)"
           }}
         />

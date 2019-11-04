@@ -1,20 +1,12 @@
 import React, { useState, useEffect, useReducer } from "react";
 import { Link } from "gatsby";
 import { useMedia } from "use-media";
-import windowSize from "react-window-size";
 import { dayStyles, nightStyles } from "../styles/modeStyles";
 import "../styles/header.css";
-import Logo from "../../static/images/favicon.ico";
-import { useBattery } from "react-use";
+import Avatar from "../../static/images/avatar.jpeg";
 import "../utils/twemoji-awesome.css";
 
-const Header = ({
-  toggleMode,
-  mode,
-  currentPath,
-  isSaveBatteryMode,
-  setSaveBatteryMode
-}) => {
+const Header = ({ toggleMode, mode }) => {
   const currentModeStyle = mode === "day" ? dayStyles : nightStyles;
   const hideMenu = useMedia({ maxWidth: "1111px" }, true);
   const hideMyName = useMedia({ maxWidth: "512px" }, true);
@@ -30,32 +22,6 @@ const Header = ({
       hideMyName
     }
   );
-  let batteryState = useBattery();
-  if (!isSaveBatteryMode) {
-    batteryState = {};
-  }
-
-  useEffect(() => {
-    if (
-      "isSupported" in batteryState &&
-      "level" in batteryState &&
-      "charging" in batteryState &&
-      batteryState.level > 0.6 &&
-      batteryState.charging
-    ) {
-      setSaveBatteryMode(false);
-    } else if (
-      "isSupported" in batteryState &&
-      "level" in batteryState &&
-      "charging" in batteryState &&
-      batteryState.level < 0.25 &&
-      !batteryState.charging
-    ) {
-      if (mode === "day" && isSaveBatteryMode) {
-        toggleMode();
-      }
-    }
-  }, [batteryState]);
 
   const toggleEmoji = toMode => {
     toggleMode(toMode);
@@ -72,15 +38,15 @@ const Header = ({
       className={`${currentModeStyle.className} main-header`}>
       <div className="main-logo">
         <img
-          src={Logo}
+          className="pic-of-me"
           style={{
-            marginRight: "1em",
+            borderRadius: "50%",
             width: 50,
+            minWidth: 50,
             height: 50,
-            ...(mode === "night" ? { filter: "invert(100%)" } : {}),
-            ...(hideMyName ? {} : { marginBottom: 10 })
+            marginRight: 10,
+            border: "2px solid #f8ab35"
           }}
-          alt="logo"
         />
         {!state.isShowMenuActive && (
           <React.Fragment>
@@ -165,22 +131,6 @@ const Header = ({
               title="Dark mode is on"
               onClick={() => toggleEmoji("day")}
               className="twa twa-new-moon"
-              style={{ fontSize: "2em" }}
-            />
-          )}
-
-          {isSaveBatteryMode ? (
-            <i
-              title="Save battery mode is on"
-              onClick={() => setSaveBatteryMode(false)}
-              className="twa twa-battery"
-              style={{ fontSize: "2em" }}
-            />
-          ) : (
-            <i
-              title="Save battery mode is off"
-              onClick={() => setSaveBatteryMode(true)}
-              className="twa twa-electric-plug"
               style={{ fontSize: "2em" }}
             />
           )}
