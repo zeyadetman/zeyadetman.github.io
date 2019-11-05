@@ -28,15 +28,6 @@
   src: url(../../static/fonts/PT_Serif/PTSerif-Bold.ttf);
 }
 
-body {
-  transition: all 1s ease;
-}
-
-h1,
-p {
-  transition: all 1s ease;
-}
-
 * {
   font-family: "PT Serif, Regular";
 }
@@ -229,4 +220,29 @@ pre[class*="language-"] {
     background-repeat: no-repeat;
     background-size: cover;
   }
+}
+
+canvas {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 0;
+  opacity: 0.2;
+}
+
+#gatsby-focus-wrapper {
+  position: relative;
+  z-index: 100;
+}
+
+.night-mode {
+  & .blog-post-container,
+  .blog-archive {
+    background: #0e0e0e;
+  }
+}
+
+.blog-post-container,
+.blog-archive {
+  background: #fff;
 }

@@ -38,7 +38,14 @@ export default function blog({ location: { pathname } }) {
         `}
         render={({ allMarkdownRemark: { edges: posts } }) => {
           return (
-            <>
+            <div
+              className="blog-archive"
+              style={{
+                width: "80%",
+                margin: "0 auto",
+                minWidth: 320,
+                padding: 15
+              }}>
               <h1 className={styles.blogPageH1}>
                 Writings & Thoughts
                 <TwitterFollowButton screenName={"zeyadetman"} />
@@ -57,7 +64,7 @@ export default function blog({ location: { pathname } }) {
                     />
                   )
               )}
-            </>
+            </div>
           );
         }}
       />

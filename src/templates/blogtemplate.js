@@ -30,7 +30,7 @@ export default function Template({
       <SEO title={frontmatter.title} />
       <article
         className="blog-post-container article"
-        style={{ width: "70%", margin: "0 auto", minWidth: 320 }}>
+        style={{ width: "80%", margin: "0 auto", minWidth: 320, padding: 15 }}>
         <header>
           <h1
             style={{

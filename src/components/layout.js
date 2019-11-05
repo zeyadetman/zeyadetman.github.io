@@ -9,6 +9,8 @@ import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import "prismjs/themes/prism-coy.css";
 import "../styles/prism-override.scss";
 import ReactGA from "react-ga";
+import init from "../hilbertCurve";
+import useWindowSize from "../hooks/useWindowSize";
 
 ReactGA.initialize("UA-50784035-2");
 if (typeof window !== `undefined`) {
@@ -16,6 +18,7 @@ if (typeof window !== `undefined`) {
 }
 const Layout = ({ children, mode, toggleMode, currentPath }) => {
   let currentModeStyle = mode === "day" ? dayStyles : nightStyles;
+  const size = useWindowSize();
 
   useEffect(() => {
     if (mode === "night") {
@@ -25,6 +28,8 @@ const Layout = ({ children, mode, toggleMode, currentPath }) => {
       currentModeStyle = dayStyles;
       document.body.style.backgroundColor = "#fff";
     }
+
+    init(size.width - 30, size.height - 30);
   }, [mode]);
 
   return (
@@ -50,8 +55,7 @@ const Layout = ({ children, mode, toggleMode, currentPath }) => {
             style={{
               margin: `0 auto`,
               maxWidth: 960,
-              padding: `0px 1.0875rem 1.45rem`,
-              paddingTop: 0
+              padding: 0
             }}>
             <main
               {...currentModeStyle}
