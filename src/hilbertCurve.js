@@ -56,8 +56,6 @@ function animate() {
 
 function init(bw, bh) {
   const pixelX = 10;
-  const temp = document.getElementById("hilbert");
-  if (temp) temp.remove();
   const canvas = document.createElement("canvas");
   canvas.setAttribute("id", "hilbert");
   canvas.setAttribute("width", bw);
