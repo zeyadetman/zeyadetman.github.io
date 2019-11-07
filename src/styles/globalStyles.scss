@@ -254,3 +254,11 @@ canvas {
 .blog-archive {
   background: #fff;
 }
+
+.token.entity,
+.token.operator,
+.token.url,
+.token.variable {
+  color: #a67f59;
+  background: transparent !important;
+}
