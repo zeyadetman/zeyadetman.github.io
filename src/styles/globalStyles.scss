@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap");
 @font-face {
   font-family: "Source Sans Pro, Black";
   src: url(../../static/fonts/Source_Sans_Pro/SourceSansPro-Black.ttf);
@@ -177,7 +178,19 @@ h1 {
 .night-mode .blog-post-content {
   & :not(pre) > code[class*="language-"] {
     color: #313131;
-    background-color: rgb(255, 255, 255);
+    background-color: #313131;
+  }
+}
+
+.gatsby-highlight pre[class*="language-"] > code {
+  border-left: 10px solid #313131 !important;
+  box-shadow: -1px 0px 0px 0px #313131, 0px 0px 0px 1px #313131 !important;
+  background-color: #313131;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  & * {
+    font-family: "Source Code Pro", monospace !important;
   }
 }
 
@@ -190,18 +203,13 @@ pre[class*="language-"].line-numbers.line-numbers code {
   padding-left: 2rem !important;
 }
 
-.gatsby-highlight pre[class*="language-"] > code {
-  border-left: 10px solid #ffc65600 !important;
-  box-shadow: -1px 0px 0px 0px #ffc65600, 0px 0px 0px 1px #dfdfdf !important;
-}
-
 .line-numbers-rows {
   display: none !important;
 }
 
 code[class*="language-"],
 pre[class*="language-"] {
-  font-size: 0.8rem !important;
+  font-size: 0.9rem !important;
 }
 
 .pic-of-me {
