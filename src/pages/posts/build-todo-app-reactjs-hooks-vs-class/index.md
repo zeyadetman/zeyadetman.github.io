@@ -1,8 +1,8 @@
 ---
-title: "Build Todo App with ReactJS Functional Components (hooks) and Class Components"
+title: Build Todo App with ReactJS Functional Components (hooks) and Class Components
 layout: post
 date: "2019-11-07"
-categories: "technical"
+categories: technical
 author: zeyadetman
 comments: true
 ---
