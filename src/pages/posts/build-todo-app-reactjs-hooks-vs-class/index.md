@@ -28,7 +28,7 @@ export default class TodoInput extends React.Component{
    super(props);
 
    this.state = {
-    todoInput: '';
+    todoInput: '',
    }
   }
 

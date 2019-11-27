@@ -22,6 +22,14 @@ try {
   initialStateStorage = "day";
 }
 
+if (
+  window.matchMedia &&
+  window.matchMedia("(prefers-color-scheme: dark)").matches
+)
+  initialStateStorage = "night";
+else initialStateStorage = "day";
+
+localStorage.setItem("mode", initialStateStorage);
 const initialState = {
   mode: initialStateStorage
 };

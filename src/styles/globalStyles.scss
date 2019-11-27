@@ -161,7 +161,7 @@ h1 {
 .blog-post-content {
   & :not(pre) > code[class*="language-"] {
     display: inline;
-    padding: 0.2em 0.4em;
+    padding: 0rem 0.2rem;
     margin: 0;
     font-size: 85%;
     color: #24292e;
@@ -178,7 +178,7 @@ h1 {
 .night-mode .blog-post-content {
   & :not(pre) > code[class*="language-"] {
     color: #313131;
-    background-color: #313131;
+    background-color: #e8e8e8;
   }
 }
 

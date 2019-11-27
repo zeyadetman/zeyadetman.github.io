@@ -1,13 +1,11 @@
 import React, { useState, useEffect, useReducer } from "react";
 import { Link } from "gatsby";
 import { useMedia } from "use-media";
-import { dayStyles, nightStyles } from "../styles/modeStyles";
 import "../styles/header.css";
 import Avatar from "../../static/images/avatar.jpeg";
 import "../utils/twemoji-awesome.css";
 
-const Header = ({ toggleMode, mode }) => {
-  const currentModeStyle = mode === "day" ? dayStyles : nightStyles;
+const Header = ({ toggleMode, currentModeStyle, mode }) => {
   const hideMenu = useMedia({ maxWidth: "1111px" }, true);
   const hideMyName = useMedia({ maxWidth: "512px" }, true);
   const [state, dispatch] = useReducer(
@@ -35,7 +33,8 @@ const Header = ({ toggleMode, mode }) => {
   return (
     <header
       {...currentModeStyle}
-      className={`${currentModeStyle.className} main-header`}>
+      className={`${currentModeStyle.className} main-header`}
+    >
       <div className="main-logo">
         <img
           className="pic-of-me"
@@ -54,7 +53,8 @@ const Header = ({ toggleMode, mode }) => {
               style={{
                 fontSize: "2rem"
               }}
-              className="name-logo">
+              className="name-logo"
+            >
               {!hideMyName && `Zeyad Etman`}
             </h1>
           </React.Fragment>
@@ -65,7 +65,8 @@ const Header = ({ toggleMode, mode }) => {
         style={{
           display: "flex",
           alignItems: "center"
-        }}>
+        }}
+      >
         {(state.isShowMenuActive || !hideMenu) && (
           <ul>
             <li>
@@ -87,7 +88,8 @@ const Header = ({ toggleMode, mode }) => {
               <Link
                 to="/blog"
                 activeClassName="active-page-link"
-                partiallyActive={true}>
+                partiallyActive={true}
+              >
                 blog
               </Link>
             </li>
@@ -114,7 +116,8 @@ const Header = ({ toggleMode, mode }) => {
               }}
               onClick={() => {
                 dispatch("TOGGLE_SHOW_MENU");
-              }}>
+              }}
+            >
               &#9776;
             </span>
           )}

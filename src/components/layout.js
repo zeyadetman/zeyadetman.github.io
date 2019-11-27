@@ -17,20 +17,24 @@ if (typeof window !== `undefined`) {
   ReactGA.pageview(window.location.pathname + window.location.search);
 }
 const Layout = ({ children, mode, toggleMode, currentPath }) => {
-  let currentModeStyle = mode === "day" ? dayStyles : nightStyles;
+  const [currentModeStyle, setCurrentModeStyles] = useState(
+    mode === "day" ? dayStyles : nightStyles
+  );
   const size = useWindowSize();
 
   useEffect(() => {
     if (mode === "night") {
-      currentModeStyle = nightStyles;
+      setCurrentModeStyles(nightStyles);
       document.body.style.backgroundColor = "#0e0e0e";
-    } else {
-      currentModeStyle = dayStyles;
+    } else if (mode === "day") {
+      setCurrentModeStyles(dayStyles);
       document.body.style.backgroundColor = "#fff";
     }
-
-    init(size.width - 30, size.height - 30);
   }, [mode]);
+
+  useEffect(() => {
+    init(size.width - 30, size.height - 30);
+  }, []);
 
   return (
     <StaticQuery
@@ -47,6 +51,7 @@ const Layout = ({ children, mode, toggleMode, currentPath }) => {
         <div style={{ margin: "0 auto" }}>
           <Header
             siteTitle={data.site.siteMetadata.title}
+            currentModeStyle={currentModeStyle}
             mode={mode}
             currentPath={currentPath}
             toggleMode={toggleMode}
@@ -56,13 +61,15 @@ const Layout = ({ children, mode, toggleMode, currentPath }) => {
               margin: `0 auto`,
               maxWidth: 960,
               padding: 0
-            }}>
+            }}
+          >
             <main
               {...currentModeStyle}
               style={{
                 ...currentModeStyle.style
               }}
-              mode={mode}>
+              mode={mode}
+            >
               {children}
             </main>
           </div>
@@ -84,7 +91,4 @@ const mapDispatchToProps = dispatch => {
   return { toggleMode: () => dispatch({ type: `TOGGLE_MODE` }) };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Layout);
+export default connect(mapStateToProps, mapDispatchToProps)(Layout);
