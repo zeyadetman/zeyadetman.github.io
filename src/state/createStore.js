@@ -33,7 +33,6 @@ try {
   localStorage.setItem("mode", initialStateStorage);
 } catch (err) {
   initialStateStorage = "day";
-  localStorage.setItem("mode", "day");
 }
 const initialState = {
   mode: initialStateStorage
