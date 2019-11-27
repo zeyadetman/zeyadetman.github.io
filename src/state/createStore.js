@@ -22,14 +22,19 @@ try {
   initialStateStorage = "day";
 }
 
-if (
-  window.matchMedia &&
-  window.matchMedia("(prefers-color-scheme: dark)").matches
-)
-  initialStateStorage = "night";
-else initialStateStorage = "day";
+try {
+  if (
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  )
+    initialStateStorage = "night";
+  else initialStateStorage = "day";
 
-localStorage.setItem("mode", initialStateStorage);
+  localStorage.setItem("mode", initialStateStorage);
+} catch (err) {
+  initialStateStorage = "day";
+  localStorage.setItem("mode", "day");
+}
 const initialState = {
   mode: initialStateStorage
 };
