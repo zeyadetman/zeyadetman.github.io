@@ -3,14 +3,14 @@
 But before we dive into this, We will discover what's the frequency array?</p>
 <h2>Frequency Array on a sorted array</h2>
 <p>For example, If you have an array like this <code class="language-text">const arr = [1,2,2,3,3,4];</code> and you want to count occurrences of each element, then you can iterate over the values and store them as keys of object and its value increasing according to the number of occurrences in the remainig array. And this is called a frequency array. The code below go through what I'm saying (Please Don't do this again):</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">const arr = [1,2,2,3,3,4];
-const result = {};
-for(let i=0; i&lt;arr.length; i++){
-  if(arr[i] in result) result[arr[i]]++;
-  else result[arr[i]] = 1;
-}
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token keyword">in</span> result<span class="token punctuation">)</span> result<span class="token punctuation">[</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+  <span class="token keyword">else</span> result<span class="token punctuation">[</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-console.log(result); // {1: 1, 2: 2, 3: 2, 4: 1}</code></pre></div>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// {1: 1, 2: 2, 3: 2, 4: 1}</span></code></pre></div>
 <p>Wow! that's cool and Right! But No. That's wrong! Why??
 You're write this code and seems that works well, but try to add <code class="language-text">-1</code> to the first of your array, then you'll discover that the final result is <code class="language-text">{1: 1, 2: 2, 3: 2, 4: 1, -1: 1}</code>, Wait... But Why? You're wondering why the <code class="language-text">-1</code> is in the end of the result object and you know the object in javascript sorting the keys by default. (Ummm not exactly!)
 Objects' Keys in Javascript are <code class="language-text">strings</code> and <code class="language-text">symbols</code> only, you can't use any primitive values as keys except <code class="language-text">strings</code> and <code class="language-text">symbols</code> So the keys in your result aren't <code class="language-text">numbers</code>, they're parsed to <code class="language-text">strings</code> before storing as keys in object, but <code class="language-text">&quot;-1&quot; &lt; &quot;1&quot; === true</code> so still why <code class="language-text">-1</code> moved to the end?!</p>
@@ -26,16 +26,16 @@ Objects' Keys in Javascript are <code class="language-text">strings</code> and <
 But what if we want to get the right order?</p>
 <h2>new Map()</h2>
 <p>To achieve our frequency array respecting keys insertion order we can use <code class="language-text">new Map()</code> which allows keys to be anytype, so the code for this will be like this:</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">const arr = [-1,1,2,3,4,3,2];
-var result = new Map();
-for(let i=0; i&lt;arr.length; i++){
-  if(result.has(arr[i])) {
-    result.set(arr[i], result.get(arr[i])+1);
-  }
-  else result.set(arr[i], 1);
-}
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    result<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> result<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">else</span> result<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-console.log(result); //Map(5) {-1 =&gt; 1, 1 =&gt; 1, 2 =&gt; 2, 3 =&gt; 2, 4 =&gt; 1}</code></pre></div>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//Map(5) {-1 => 1, 1 => 1, 2 => 2, 3 => 2, 4 => 1}</span></code></pre></div>
 <p>Then we can iterate over it using <code class="language-text">forEach</code> method.</p>
 <h2>Resources</h2>
 <ul>
