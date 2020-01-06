@@ -13,7 +13,7 @@ But before we dive into this, We will discover what's the frequency array?
 ## Frequency Array on a sorted array
 For example, If you have an array like this `const arr = [1,2,2,3,3,4];` and you want to count occurrences of each element, then you can iterate over the values and store them as keys of object and its value increasing according to the number of occurrences in the remainig array. And this is called a frequency array. The code below go through what I'm saying (Please Don't do this again):
 
-```
+```js
 const arr = [1,2,2,3,3,4];
 const result = {};
 for(let i=0; i<arr.length; i++){
@@ -42,7 +42,7 @@ But what if we want to get the right order?
 ## new Map()
 To achieve our frequency array respecting keys insertion order we can use `new Map()` which allows keys to be anytype, so the code for this will be like this:
 
-```
+```js
 const arr = [-1,1,2,3,4,3,2];
 var result = new Map();
 for(let i=0; i<arr.length; i++){
