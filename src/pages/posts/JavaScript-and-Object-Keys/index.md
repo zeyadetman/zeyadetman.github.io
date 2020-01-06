@@ -32,7 +32,7 @@ Objects' Keys in Javascript are `strings` and `symbols` only, you can't use any 
 
 ## How Javascript objects order their keys?
 Keys in Javascript objects are three types, +integer-like (0,1,2,3), strings, and symbols. And the order goes:
-1. Integer-like in ascending order.
+1. +Integer-like in ascending order. `-1` like our previous example or negatives in general aren't valid as an index, there's no `-1` index, So they're ordered as `strings`.
 2. Strings in order of created, without any sort or comparison.
 3. Symbols in order of created, without any sort or comparison.
 
