@@ -35,7 +35,7 @@ try {
   initialStateStorage = "day";
 }
 const initialState = {
-  mode: initialStateStorage
+  mode: "day"
 };
 
 const createStore = () => reduxCreateStore(reducer, initialState);
