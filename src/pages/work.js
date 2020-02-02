@@ -22,7 +22,7 @@ const Work = ({ mode, location: { pathname } }) => {
       company: "Bosta",
       url: "https://www.bosta.co/",
       logo:
-        "https://media.licdn.com/dms/image/C4D0BAQHZLO6RwLQYMQ/company-logo_400_400/0?e=1574294400&v=beta&t=ao0ipD-OI-c59dnsAq7MfepTJwjiLnx4sHGZXYuDV8w",
+        "https://bosta.co/wp-content/uploads/2019/09/bosta_en-2.png",
       date: "May 2019 – Present"
     },
     {
