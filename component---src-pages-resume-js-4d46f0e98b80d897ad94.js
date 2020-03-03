@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{F2CN:function(e,t,n){"use strict";n.r(t);var s=n("q1tI"),o=n.n(s);t.default=function(){return Object(s.useEffect)((function(){window.href.location="https://www.slideshare.net/slideshow/embed_code/key/hsbLIjXmKEsnBD"}),[]),o.a.createElement("a",{href:"https://www.slideshare.net/slideshow/embed_code/key/hsbLIjXmKEsnBD"},"click here if you're not automatically redirected")}}}]);
+//# sourceMappingURL=component---src-pages-resume-js-4d46f0e98b80d897ad94.js.map
