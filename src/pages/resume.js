@@ -2,7 +2,9 @@ import React, { useEffect } from "react";
 
 const Resume = () => {
   useEffect(() => {
-    window.href.location = 'https://www.slideshare.net/slideshow/embed_code/key/hsbLIjXmKEsnBD';
+    if (typeof window !== 'undefined') {
+      window.location.href = "https://www.slideshare.net/slideshow/embed_code/key/hsbLIjXmKEsnBD";
+    }
   }, []);
   return (
     <a href="https://www.slideshare.net/slideshow/embed_code/key/hsbLIjXmKEsnBD">
