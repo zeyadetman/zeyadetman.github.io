@@ -103,6 +103,11 @@ const Header = ({ toggleMode, currentModeStyle, mode }) => {
                 contact
               </Link>
             </li>
+            <li>
+              <Link to="/resume" activeClassName="active-page-link">
+                resume
+              </Link>
+            </li>
           </ul>
         )}
 
