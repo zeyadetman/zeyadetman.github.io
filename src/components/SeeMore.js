@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "gatsby";
 
 const TabCard = ({ page, info }) => (
@@ -6,7 +6,8 @@ const TabCard = ({ page, info }) => (
     className="card"
     style={{
       padding: "15px 1.5em"
-    }}>
+    }}
+  >
     <h3 style={{ textAlign: "center", marginTop: 0 }}>
       {page.path ? (
         <Link to={page.path}>{page.title}</Link>
@@ -40,27 +41,38 @@ const tabs = [
   {
     page: { title: "Follow Me" },
     info: (
-      <p>
-        You can follow me on <a href="https://github.com/zeyadetman">GitHub</a>
-        {", "}
-        <a href="https://twitter.com/zeyadetman">Twitter</a>
-        {", "}
-        <a href="https://www.facebook.com/zeyadetman">Facebook</a>
-        {", "}
-        <a href="https://www.linkedin.com/in/zeyadetman">LinkedIn</a>
-        {", "}
-        <a href="https://stackoverflow.com/users/5721245/zeyad-etman">
-          Stack Overflow
-        </a>
-        {", "}
-        <a href="https://www.quora.com/profile/Zeyad-Etman">Quora</a>
-        {", "}
-        <a href="mailto:zeyadetman@gmail.com">Email</a>.
-      </p>
+      <>
+        {" "}
+        <div
+          class="g-ytsubscribe"
+          data-channel="zeyadetman"
+          data-layout="full"
+          data-count="default"
+        ></div>
+        <p>
+          You can follow me on{" "}
+          <a href="https://github.com/zeyadetman">GitHub</a>
+          {", "}
+          <a href="https://twitter.com/zeyadetman">Twitter</a>
+          {", "}
+          <a href="https://youtube.com/c/zeyadetman">YouTube</a>
+          {", "}
+          <a href="https://www.linkedin.com/in/zeyadetman">LinkedIn</a>
+          {", "}
+          <a href="https://www.quora.com/profile/Zeyad-Etman">Quora</a>
+        </p>
+      </>
     )
   }
 ];
 export default function SeeMore() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://apis.google.com/js/platform.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <div
       style={{
@@ -68,7 +80,8 @@ export default function SeeMore() {
         display: "grid",
         gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
         gridGap: "15px"
-      }}>
+      }}
+    >
       {tabs.map(({ page, info }) => (
         <TabCard page={page} key={page.title} info={info} />
       ))}

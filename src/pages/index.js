@@ -1,11 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import SEO from "../components/seo";
 import "../styles/projects.css";
-import Picture from "../../static/images/me.jpg";
-import Avatar from "../../static/images/avatar.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faFacebookF,
   faTwitter,
   faGithub,
   faLinkedinIn
@@ -13,8 +10,7 @@ import {
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import SeeMore from "../components/SeeMore";
 
-const Home = ({ location: { pathname } }) => {
-  const [image, setImage] = useState(Avatar);
+const Home = () => {
   return (
     <>
       <SEO title="Home" keywords={[`zeyadetman`, `portfolio`]} />
@@ -24,9 +20,9 @@ const Home = ({ location: { pathname } }) => {
           margin: "0px auto",
           width: "80%",
           minWidth: 320
-        }}>
+        }}
+      >
         <div
-          // src={image}
           className="pic-of-me"
           style={{
             borderRadius: "50%",
@@ -39,16 +35,25 @@ const Home = ({ location: { pathname } }) => {
         />
         <h1 style={{ marginBottom: 0 }}>Zeyad Etman</h1>
         <h2 style={{ margin: 0 }}>Front-End Engineer</h2>
+
+        <div style={{ marginTop: 16 }}>
+          <p>
+            I make videos on
+            <a href="https://youtube.com/c/zeyadetman"> YouTube</a>.
+          </p>
+        </div>
         <p>
           I do stuff <i className="twa twa-zap"></i> on the Internet.
         </p>
       </div>
+
       <ul
         style={{
           display: "flex",
           justifyContent: "center"
         }}
-        className="social-network">
+        className="social-network"
+      >
         <li>
           <a href="https://github.com/zeyadetman">
             <FontAwesomeIcon icon={faGithub} />
@@ -57,11 +62,6 @@ const Home = ({ location: { pathname } }) => {
         <li>
           <a href="https://twitter.com/zeyadetman">
             <FontAwesomeIcon icon={faTwitter} />
-          </a>
-        </li>
-        <li>
-          <a href="https://www.facebook.com/zeyadetman">
-            <FontAwesomeIcon icon={faFacebookF} />
           </a>
         </li>
         <li>
