@@ -3,15 +3,17 @@ module.exports = {
   siteMetadata: {
     title: `Zeyad Etman`,
     description: `Zeyad Etman's Space on the internet.`,
+    siteUrl: `https://zeyadetman.github.io/`,
     author: `@zeyadetman`,
-    owner: "zeyadetman"
+    owner: "zeyadetman",
   },
   plugins: [
+    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-layout`,
       options: {
-        component: require.resolve(`./src/components/layout`)
-      }
+        component: require.resolve(`./src/components/layout`),
+      },
     },
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
@@ -19,8 +21,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `static/images`
-      }
+        path: `static/images`,
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -33,23 +35,23 @@ module.exports = {
         background_color: `#fdbd12`,
         theme_color: `#fdbd12`,
         display: `minimal-ui`,
-        icon: `static/images/avatar.jpeg` // This path is relative to the root of the site.
-      }
+        icon: `static/images/avatar.jpeg`, // This path is relative to the root of the site.
+      },
     },
     "gatsby-plugin-offline",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
-        name: "pages"
-      }
+        name: "pages",
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages/posts`,
-        name: "markdown-pages"
-      }
+        name: "markdown-pages",
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -65,15 +67,15 @@ module.exports = {
               inlineCodeMarker: null,
               aliases: { js: "javascript" },
               showLineNumbers: false,
-              noInlineHighlight: false
-            }
-          }
-        ]
-      }
-    }
+              noInlineHighlight: false,
+            },
+          },
+        ],
+      },
+    },
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
-  ]
+  ],
 };
