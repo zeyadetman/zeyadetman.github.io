@@ -5,7 +5,11 @@ const TabCard = ({ page, info }) => (
   <div
     className="card"
     style={{
-      padding: "15px 1.5em"
+      ...(page.title !== "Subscribe"
+        ? {
+            padding: "15px 1.5em",
+          }
+        : { padding: "15px 0" }),
     }}
   >
     <h3 style={{ textAlign: "center", marginTop: 0 }}>
@@ -21,14 +25,6 @@ const TabCard = ({ page, info }) => (
 
 const tabs = [
   {
-    page: {
-      url: "https://github.com/zeyadetman",
-      title: "Side Projects & Tools"
-    },
-    info:
-      "I'm building some cool stuff to learn new things, and make the internet a better place."
-  },
-  {
     page: { path: "/blog", title: "Writing" },
     info: (
       <p>
@@ -36,7 +32,7 @@ const tabs = [
         mathematics. You also can follow me on{" "}
         <a href="https://dev.to/zeyadetman">dev.to</a>
       </p>
-    )
+    ),
   },
   {
     page: { title: "Follow Me" },
@@ -62,8 +58,20 @@ const tabs = [
           <a href="https://www.quora.com/profile/Zeyad-Etman">Quora</a>
         </p>
       </>
-    )
-  }
+    ),
+  },
+  {
+    page: { title: "Subscribe" },
+    info: (
+      <iframe
+        src="https://zeyadetman.substack.com/embed"
+        width="fit-content"
+        height="320"
+        frameborder="0"
+        scrolling="no"
+      ></iframe>
+    ),
+  },
 ];
 export default function SeeMore() {
   useEffect(() => {
@@ -79,7 +87,7 @@ export default function SeeMore() {
         marginTop: "15px",
         display: "grid",
         gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
-        gridGap: "15px"
+        gridGap: "15px",
       }}
     >
       {tabs.map(({ page, info }) => (

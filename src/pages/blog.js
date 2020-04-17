@@ -44,11 +44,19 @@ export default function blog({ location: { pathname } }) {
                 width: "80%",
                 margin: "0 auto",
                 minWidth: 320,
-                padding: 15
-              }}>
+                padding: 15,
+              }}
+            >
               <h1 className={styles.blogPageH1}>
                 Writings & Thoughts
                 <TwitterFollowButton screenName={"zeyadetman"} />
+                <iframe
+                  src="https://zeyadetman.substack.com/embed"
+                  width="fit-content"
+                  height="320"
+                  frameborder="0"
+                  scrolling="no"
+                ></iframe>
               </h1>
               {posts.map(
                 ({ node }) =>
