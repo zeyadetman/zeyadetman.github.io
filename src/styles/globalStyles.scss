@@ -57,11 +57,6 @@ a {
   font-family: "Source Sans Pro, Bold";
 }
 
-.social-network li a:hover {
-  color: #000;
-  border-bottom: none;
-}
-
 .name-logo,
 a:hover,
 .active-page-link {
@@ -210,24 +205,6 @@ pre[class*="language-"].line-numbers.line-numbers code {
 code[class*="language-"],
 pre[class*="language-"] {
   font-size: 1rem !important;
-}
-
-.pic-of-me {
-  background: url(../../static/images/avatar.jpeg);
-  margin: 0 auto;
-  transition: background-color 1000ms linear;
-  transition: all 3s;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  &:hover {
-    transform: rotate(1080deg);
-    background: url(../../static/images/me.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
 }
 
 #hilbert {

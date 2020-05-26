@@ -5,34 +5,43 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTwitter,
   faGithub,
-  faLinkedinIn
+  faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import SeeMore from "../components/SeeMore";
+import {
+  StyledAvatar,
+  StyledWrapper,
+  StyledSocialNetworkLinks,
+} from "../styles/pages/stylesIndex";
+
+const socialNetworkLinks = [
+  { url: "https://github.com/zeyadetman", icon: faGithub },
+  { url: "https://twitter.com/zeyadetman", icon: faTwitter },
+  { url: "https://www.linkedin.com/in/zeyadetman", icon: faLinkedinIn },
+  { url: "mailto:zeyadetman@gmail.com", icon: faEnvelope },
+];
+
+const renderSocialNetworkLinks = () => {
+  return (
+    <StyledSocialNetworkLinks>
+      {socialNetworkLinks.map(({ url, icon }) => (
+        <li key={url}>
+          <a href={url}>
+            <FontAwesomeIcon icon={icon} />
+          </a>
+        </li>
+      ))}
+    </StyledSocialNetworkLinks>
+  );
+};
 
 const Home = () => {
   return (
     <>
       <SEO title="Home" keywords={[`zeyadetman`, `portfolio`]} />
-      <div
-        style={{
-          textAlign: "center",
-          margin: "0px auto",
-          width: "80%",
-          minWidth: 320
-        }}
-      >
-        <div
-          className="pic-of-me"
-          style={{
-            borderRadius: "50%",
-            width: 200,
-            minWidth: 200,
-            height: 200,
-            border: "5px solid #f8ad36",
-            boxShadow: "0px 2px 14px rgba(0,0,0,0.6)"
-          }}
-        />
+      <StyledWrapper>
+        <StyledAvatar />
         <h1 style={{ marginBottom: 0 }}>Zeyad Etman</h1>
         <h2 style={{ margin: 0 }}>Front-End Engineer</h2>
 
@@ -45,36 +54,8 @@ const Home = () => {
         <p>
           I do stuff <i className="twa twa-zap"></i> on the Internet.
         </p>
-      </div>
-
-      <ul
-        style={{
-          display: "flex",
-          justifyContent: "center"
-        }}
-        className="social-network"
-      >
-        <li>
-          <a href="https://github.com/zeyadetman">
-            <FontAwesomeIcon icon={faGithub} />
-          </a>
-        </li>
-        <li>
-          <a href="https://twitter.com/zeyadetman">
-            <FontAwesomeIcon icon={faTwitter} />
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/zeyadetman">
-            <FontAwesomeIcon icon={faLinkedinIn} />
-          </a>
-        </li>
-        <li>
-          <a href="mailto:zeyadetman@gmail.com">
-            <FontAwesomeIcon icon={faEnvelope} />
-          </a>
-        </li>
-      </ul>
+      </StyledWrapper>
+      {renderSocialNetworkLinks()}
       <SeeMore />
     </>
   );
