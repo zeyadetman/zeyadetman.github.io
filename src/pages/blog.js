@@ -52,7 +52,7 @@ export default function blog({ location: { pathname } }) {
                 <TwitterFollowButton screenName={"zeyadetman"} />
                 <iframe
                   src="https://zeyadetman.substack.com/embed"
-                  width="fit-content"
+                  width="365"
                   height="320"
                   frameborder="0"
                   scrolling="no"

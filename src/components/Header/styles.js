@@ -9,3 +9,9 @@ export const StyledThumb = styled(StyledPicOfMe)`
   margin-right: 10px;
   border: 2px solid #f8ab35;
 `;
+
+export const StyledMainLogo = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+`;

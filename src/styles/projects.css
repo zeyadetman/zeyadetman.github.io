@@ -4,66 +4,6 @@
   grid-gap: 15px;
 }
 
-.card-title {
-  font-size: 1.25em;
-  font-weight: 600;
-  padding: 10px 0 0 0;
-  margin: 0;
-  overflow-wrap: break-word;
-}
-
-.card {
-  padding: 0.5em;
-  border-radius: 5px;
-}
-
-.card-desc {
-  margin: 5px 0 25px 0;
-}
-
-.card-links {
-  display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 15px;
-}
-
-.card-links a {
-  box-shadow: 0px 0px 5px 0px #fdbd12;
-  border-radius: 5px;
-  padding: 5px 50px;
-}
-
-.card-links a:hover {
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(#ffbf00),
-    to(#ff6a00)
-  );
-  background: linear-gradient(to right, #ffbf00, #ff6a00);
-  -webkit-text-fill-color: #fff;
-}
-
-.imgcont {
-  text-align: center;
-  min-height: 200px;
-  max-height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.card-img {
-  max-width: 100%;
-  max-height: 200px;
-}
-
-.card-info {
-  min-height: 100px;
-  padding: 0 5px;
-}
-
 h3.projects-title {
   position: relative;
   margin: 25px 0;

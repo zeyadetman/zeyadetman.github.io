@@ -26,3 +26,9 @@ export const StyledSocialNetworkLinks = styled.ul`
     border-bottom: none;
   }
 `;
+
+export const StyledNewsletter = styled.div`
+  text-align: center;
+  width: fit-content;
+  margin: 0 auto;
+`;

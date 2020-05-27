@@ -15,9 +15,4 @@ export const routes = [
     activeClassName: "active-page-link",
     partiallyActive: true,
   },
-  {
-    title: "contact",
-    to: "/contact",
-    activeClassName: "active-page-link",
-  },
 ];

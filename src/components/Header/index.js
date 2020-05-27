@@ -1,10 +1,10 @@
 import React, { useReducer } from "react";
-import { Link } from "gatsby";
+import { Link, navigate } from "gatsby";
 import { useMedia } from "use-media";
 import "../../styles/header.css";
 import "../../utils/twemoji-awesome.css";
 import { routes } from "./routes";
-import { StyledThumb } from "./styles";
+import { StyledThumb, StyledMainLogo } from "./styles";
 
 const renderHeaderMenu = () => {
   return (
@@ -48,7 +48,11 @@ const Header = ({ toggleMode, currentModeStyle, mode }) => {
       {...currentModeStyle}
       className={`${currentModeStyle.className} main-header`}
     >
-      <div className="main-logo">
+      <StyledMainLogo
+        onClick={() => {
+          navigate("/");
+        }}
+      >
         <StyledThumb />
 
         {!state.isShowMenuActive && (
@@ -63,7 +67,7 @@ const Header = ({ toggleMode, currentModeStyle, mode }) => {
             </h1>
           </React.Fragment>
         )}
-      </div>
+      </StyledMainLogo>
 
       <div
         style={{

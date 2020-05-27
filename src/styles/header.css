@@ -5,11 +5,6 @@
   justify-content: space-around;
 }
 
-.main-logo {
-  display: flex;
-  align-items: center;
-}
-
 .main-header ul {
   display: flex;
   padding: 0.7em 1em;
@@ -26,7 +21,6 @@
   border: solid 5px transparent;
   caret-color: #0095ff;
   color: #0095ff;
-  /* !importanté */
 }
 
 .input-path:focus {
