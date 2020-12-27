@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { StyledPicOfMe } from "../../styles/globalStyles.js";
 
 export const StyledThumb = styled(StyledPicOfMe)`
-  border-radius: 50%;
+  border-radius: 5px;
   width: 50px;
   min-width: 50px;
   height: 50px;
