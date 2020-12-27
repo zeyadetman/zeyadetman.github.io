@@ -3,7 +3,7 @@ import Avatar from "../../static/images/avatar.jpeg";
 import IMAGE_OF_ME from "../../static/images/me.jpg";
 
 export const StyledPicOfMe = styled.img`
-  background: url(${Avatar});
+  background-image: url(${Avatar});
   margin: 0 auto;
   transition: background-color 1000ms linear;
   transition: all 3s;
@@ -13,7 +13,7 @@ export const StyledPicOfMe = styled.img`
 
   &:hover {
     transform: rotate(1080deg);
-    background: url(${IMAGE_OF_ME});
+    background-image: url(${IMAGE_OF_ME});
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
