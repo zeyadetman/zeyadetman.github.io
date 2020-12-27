@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { StyledPicOfMe } from "../globalStyles.js";
 
 export const StyledAvatar = styled(StyledPicOfMe)`
-  border-radius: 50%;
+  border-radius: 5px;
   width: 200px;
   min-width: 200px;
   height: 200px;
