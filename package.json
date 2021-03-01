@@ -30,7 +30,7 @@
     "lodash": "^4.17.19",
     "node-sass": "^4.13.1",
     "prettier": "^2.0.5",
-    "prismjs": "^1.21.0",
+    "prismjs": "^1.23.0",
     "prop-types": "^15.7.1",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
